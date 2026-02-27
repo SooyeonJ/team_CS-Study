@@ -11,25 +11,30 @@ on:
 jobs:
   mirror:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          persist-credentials: false
 
       - name: Push to team repo (same branch name)
         env:
-          TEAM_REPO_TOKEN: ${{ secrets.TEAM_REPO_TOKEN }}
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           set -e
 
           git config user.name "mirror-bot"
           git config user.email "mirror-bot@users.noreply.github.com"
 
-          TEAM_URL="https://x-access-token:${TEAM_REPO_TOKEN}@github.com/SooyeonJ/team_CS-Study.git"
+          TEAM_URL="https://x-access-token:${PAT_TOKEN}@github.com/SooyeonJ/team_CS-Study.git"
+
+          # reset remote (in case of reruns)
+          git remote remove team 2>/dev/null || true
           git remote add team "${TEAM_URL}"
 
           BRANCH="${GITHUB_REF_NAME}"
           echo "Mirroring branch: ${BRANCH}"
 
-          git push team "HEAD:${BRANCH}" --force-with-lease
+          git push team "HEAD:${BRANCH}"
