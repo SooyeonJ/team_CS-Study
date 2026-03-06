@@ -8,13 +8,13 @@
 
 ## 🏛 9급 국회직
 
-| 연도 | 문제 파일 |
-|------|------------|
-| 2025 | [2025 국회직 컴퓨터일반.pdf](https://github.com/user-attachments/files/25560632/2025.pdf) |
+| 연도 | 문제 파일 | 정답 |
+|------|------------|-------------|
+| 2025 | [2025 국회직 컴퓨터일반.pdf](https://github.com/user-attachments/files/25560632/2025.pdf) | 
 | 2022 | [2022 국회직 컴퓨터일반.pdf](https://github.com/user-attachments/files/25560631/2022.pdf) |
 | 2021 | [2021 국회직 컴퓨터일반.pdf](https://github.com/user-attachments/files/25560630/2021.pdf) |
 | 2020 | [2020 국회직 컴퓨터일반.pdf](https://github.com/user-attachments/files/25560629/2020.pdf) |
-| 2019 | [2019 국회직 컴퓨터일반.pdf](https://github.com/user-attachments/files/25560640/2019.pdf) |
+| 2019 | [2019 국회직 컴퓨터일반.pdf](https://github.com/user-attachments/files/25560640/2019.pdf) | [2019 국회직 정답_가형.pdf](https://github.com/user-attachments/files/25797690/7._.pdf)
 
 ---
 
