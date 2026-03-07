@@ -43,8 +43,44 @@
 ---
 
 ## 🏛 7급 기출
+**데이터베이스론**
+[2025 국가직 7급 데이터베이스론.pdf](https://github.com/user-attachments/files/25814164/2025.7.pdf)
+[2024 국가직 7급 데이터베이스론.pdf](https://github.com/user-attachments/files/25814169/2024.7.pdf)
+[2023 국가직 7급 데이터베이스론.pdf](https://github.com/user-attachments/files/25814168/2023.7.pdf)
+[2022 국가직 7급 데이터베이스론.pdf](https://github.com/user-attachments/files/25814167/2022.7.pdf)
+[2021 국가직 7급 데이터베이스론.pdf](https://github.com/user-attachments/files/25814166/2021.7.pdf)
 
-- (추가 예정)
+**소프트웨어공학**
+[2025 국가직 7급 소프트웨어공학.pdf](https://github.com/user-attachments/files/25814174/2025.7.pdf)
+[2024 국가직 7급 소프트웨어공학.pdf](https://github.com/user-attachments/files/25814173/2024.7.pdf)
+[2023 국가직 7급 소프트웨어공학.pdf](https://github.com/user-attachments/files/25814172/2023.7.pdf)
+[2022 국가직 7급 소프트웨어공학.pdf](https://github.com/user-attachments/files/25814171/2022.7.pdf)
+[2021 국가직 7급 소프트웨어공학.pdf](https://github.com/user-attachments/files/25814170/2021.7.pdf)
+
+**자료구조론**
+[2025 국가직 7급 자료구조론.pdf](https://github.com/user-attachments/files/25814181/2025.7.pdf)
+[2024 국가직 7급 자료구조론.pdf](https://github.com/user-attachments/files/25814180/2024.7.pdf)
+[2023 국가직 7급 자료구조론.pdf](https://github.com/user-attachments/files/25814179/2023.7.pdf)
+[2022 국가직 7급 자료구조론.pdf](https://github.com/user-attachments/files/25814178/2022.7.pdf)
+[2021 국가직 7급 자료구조론.pdf](https://github.com/user-attachments/files/25814176/2021.7.pdf)
+
+**정보보호론**
+[2025 국가직 7급 정보보호론.pdf](https://github.com/user-attachments/files/25814187/2025.7.pdf)
+[2024 국가직 7급 정보보호론.pdf](https://github.com/user-attachments/files/25814185/2024.7.pdf)
+[2023 국가직 7급 정보보호론.pdf](https://github.com/user-attachments/files/25814184/2023.7.pdf)
+[2022 국가직 7급 정보보호론.pdf](https://github.com/user-attachments/files/25814183/2022.7.pdf)
+[2021 국가직 7급 정보보호론.pdf](https://github.com/user-attachments/files/25814182/2021.7.pdf)
+
+** 알고리즘 (번외) **
+[2025 국가직 7급 알고리즘.pdf](https://github.com/user-attachments/files/25814190/2025.7.pdf)
+[2024 국가직 7급 알고리즘.pdf](https://github.com/user-attachments/files/25814189/2024.7.pdf)
+[2023 국가직 7급 알고리즘.pdf](https://github.com/user-attachments/files/25814188/2023.7.pdf)
+
+** 인공지은 (번외) **
+[2025 국가직 7급 인공지능.pdf](https://github.com/user-attachments/files/25814193/2025.7.pdf)
+[2024 국가직 7급 인공지능.pdf](https://github.com/user-attachments/files/25814192/2024.7.pdf)
+[2023 국가직 7급 인공지능.pdf](https://github.com/user-attachments/files/25814191/2023.7.pdf)
+
 
 ---
 
