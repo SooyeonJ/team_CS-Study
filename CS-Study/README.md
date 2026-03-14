@@ -3,8 +3,9 @@
 
 > 공기업 전산직 대비 컴퓨터 일반 문제풀이 레포지터리
 > 
-> 9급 국회직 > 9급 계리직 > 7급 순 문제풀이 (※과거 년도 순으로 문제풀이 진행)
-
+> [객관식 대비] 9급 국회직 > 9급 계리직 > 7급 순 문제풀이 (※과거 년도 순으로 문제풀이 진행)
+> 
+> [주관식 대비] 한국은행 서술형 문제 - 주별로 문풀 후 노션 내 문제은행 내 정리
 ---
 
 ## 🏛 9급 국회직
@@ -52,6 +53,25 @@
 | **알고리즘** | [다운로드](https://github.com/user-attachments/files/25814190/2025.7.pdf) | [다운로드](https://github.com/user-attachments/files/25814189/2024.7.pdf) | [다운로드](https://github.com/user-attachments/files/25814188/2023.7.pdf) | - | - |
 | **인공지능** | [다운로드](https://github.com/user-attachments/files/25814193/2025.7.pdf) | [다운로드](https://github.com/user-attachments/files/25814192/2024.7.pdf) | [다운로드](https://github.com/user-attachments/files/25814191/2023.7.pdf) | - | - |
 
+---
+
+## 🏛 한국은행 문제 주차별 문제풀이
+| 주차 | 과목 | 주제 | 포함 개념 | 관련 문제 |
+|---|---|---|---|---|
+| 3월 1주차 | 데이터베이스론 | 트랜잭션 | ACID, TCL(COMMIT/ROLLBACK), 동시성 제어, 2PL, Deadlock | 2020 Ⅰ-2, 2023 Ⅰ-2 |
+| 3월 2주차 | 데이터베이스론 | 정규화 | 함수 종속, 이상(삽입/삭제/갱신), 2NF, 3NF | 2021 Ⅰ-1, 2024 Ⅰ-1 |
+| 3월 3주차 | 운영체제론 | 메모리 관리 | Paging, Segment, MMU, 주소 변환, 내부/외부 단편화 | 2021 Ⅰ-3 |
+| 3월 4주차 | 운영체제론 | 페이지 교체 | FIFO, LRU, Thrashing, Working Set | 2022 Ⅰ-5, 2023 Ⅰ-9 |
+| 4월 1주차 | 운영체제론 | 프로세스 관리 | 프로세스 vs 스레드, Spinlock, Mutex, 시스템콜(fork, wait) | 2023 Ⅰ-8 |
+| 4월 2주차 | 운영체제론 | CPU 스케줄링 | FCFS, SRT, 선점/비선점, 간트차트, Banker Algorithm | 2024 Ⅰ-10 |
+| 4월 3주차 | 데이터통신론 | 네트워크 구조 | OSI 7계층, TCP/IP 4계층, TCP vs UDP | 2024 Ⅰ-5 |
+| 4월 4주차 | 데이터통신론 | IP 및 라우팅 | DHCP, Subnet Mask, Distance Vector, Link State, Dijkstra | 2021 Ⅰ-4, 2022 Ⅰ-3 |
+| 5월 1주차 | 데이터통신론 | TCP 통신 | ARP/RARP, TCP 3-way handshake, 혼잡 제어 | 2023 Ⅰ-6, Ⅰ-7 |
+| 5월 2주차 | 자료구조론 | 그래프 알고리즘 | BFS, DFS, Kruskal, Prim, 최소신장트리 | 2020 Ⅰ-4, 2022 Ⅰ-2, 2023 Ⅰ-10 |
+| 5월 3주차 | 자료구조론 | 해싱 | Hash collision, Chaining, Open Addressing, Linear probing | 2024 Ⅰ-9 |
+| 5월 4주차 | 컴퓨터구조론 | 저장장치 구조 | RAID, 패리티, 캐시 메모리, Write-through, Write-back | 2024 Ⅰ-7, Ⅰ-8 |
+| 6월 1주차 | 컴퓨터구조론 | 프로세서 구조 | CISC vs RISC, CPU vs GPU, Flash Memory | 2023 Ⅰ-4, Ⅰ-5 |
+| 6월 2주차 | 소프트웨어공학론 | 개발 방법론 | SDLC, Agile vs Waterfall, UML, 테스트 기법 | 2021 Ⅰ-2, 2023 Ⅰ-3, 2024 Ⅰ-4 |
 
 ---
 
