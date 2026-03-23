@@ -1,47 +1,30 @@
 import re, subprocess
-
-t = "| 월 | 팀원 | 플랫폼 | 레벨 | 문제 |\n|---|---|---|---|---|\n"
-targets = ['SooyeonJ', 'Chobochoi', 'dori-2i']
-d = []
-
-for b in targets:
-    remote_b = f"origin/{b}"
+from datetime import datetime, timedelta
+t="| 날짜 | 요일 | SooyeonJ | Chobochoi | dori-2i |\n|:---:|:---:|:---:|:---:|:---:|\n"
+us=['SooyeonJ','Chobochoi','dori-2i']
+d={}
+for u in us:
+    rb=f"origin/{u}"
     try:
-        # 지정된 원격 브랜치의 파일 목록 추출
-        fs_out = subprocess.check_output(['git', 'ls-tree', '-r', '--name-only', remote_b]).decode('utf-8')
-        fs = [x for x in fs_out.split('\n') if x.startswith('백준/') or x.startswith('프로그래머스/')]
-    except subprocess.CalledProcessError:
-        continue
-
-    for f in fs:
-        m = re.search(r'\[(.*?)\] Title: (.*?),', f)
-        if m:
+        fs=subprocess.check_output(['git','ls-tree','-r','--name-only',rb]).decode('utf-8').split('\n')
+        for f in [x for x in fs if '백준/' in x or '프로그래머스/' in x]:
+            if not re.search(r'\[(.*?)\] Title: (.*?),', f): continue
             try:
-                # 파일이 생성/수정된 날짜만 추출
-                log = subprocess.check_output(['git', 'log', '-1', '--format=%ad', '--date=short', remote_b, '--', f]).decode('utf-8').strip()
+                log=subprocess.check_output(['git','log','-1','--format=%ad','--date=iso',rb,'--',f]).decode('utf-8').strip()
                 if log:
-                    month = log[:7] # YYYY-MM 형식 지정
-                    platform = '백준' if f.startswith('백준') else '프그'
-                    d.append((month, b, platform, m.group(1), m.group(2)))
-            except subprocess.CalledProcessError:
-                pass
-
-# 월(내림차순) -> 팀원 이름 순으로 정렬
-d.sort(key=lambda x: (x[0], x[1]), reverse=True)
-
-for x in d:
-    t += f"| {x[0]} | {x[1]} | {x[2]} | {x[3]} | {x[4]} |\n"
-
-# README.md 파일 읽기 및 쓰기
-with open('README.md', 'r', encoding='utf-8') as file:
-    c = file.read()
-
-new_c = re.sub(
-    r'.*?', 
-    f'\n{t}', 
-    c, 
-    flags=re.DOTALL
-)
-
-with open('README.md', 'w', encoding='utf-8') as file:
-    file.write(new_c)
+                    dt=datetime.strptime(log[:19],"%Y-%m-%d %H:%M:%S")
+                    if dt.hour==0: dt-=timedelta(days=1)
+                    if dt.weekday() not in [0,2,4]: continue
+                    ds=dt.strftime("%m-%d")
+                    if ds not in d: d[ds]={x:0 for x in us}
+                    d[ds][u]+=1
+            except: pass
+    except: pass
+for k in sorted(d.keys(),reverse=True):
+    wk=["월","화","수","목","금","토","일"][datetime.strptime(f"2026-{k}","%Y-%m-%d").weekday()]
+    r=f"| {k} | {wk} |"
+    for u in us: r+=f" O ({d[k][u]}) |" if d[k][u]>0 else " X |"
+    t+=r+"\n"
+with open('README.md','r',encoding='utf-8') as f: c=f.read()
+with open('README.md','w',encoding='utf-8') as f:
+    f.write(re.sub(r'.*?',f'\n{t}',c,flags=re.DOTALL))
