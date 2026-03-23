@@ -1,9 +1,10 @@
-name: Update README on Member Push
+name: Update README via Cron
 
 on:
-  push:
-    branches-ignore:
-      - main 
+  schedule:
+    # 한국 시간(KST) 기준 매일 새벽 01:05 실행 (UTC 기준 16:05)
+    - cron: '5 16 * * *'
+  workflow_dispatch:
 
 jobs:
   update-readme:
@@ -28,5 +29,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add coding_test.md
-          git commit -m "docs: Update problem solving status in README" || echo "No changes to commit"
+          git commit -m "docs: Update problem solving status via Cron" || echo "No changes to commit"
           git push origin main
