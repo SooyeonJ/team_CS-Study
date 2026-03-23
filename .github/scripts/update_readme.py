@@ -1,4 +1,4 @@
-import os, re, subprocess
+import subprocess
 from datetime import datetime, timedelta
 
 TARGET_FILE = 'coding_test.md'
@@ -14,20 +14,16 @@ for u in users:
         continue
 
     for f in files:
-        if not re.search(r'\[(.*?)\] Title: (.*?),', f):
+        if 'Title:' not in f:
             continue
         try:
             log = subprocess.check_output(['git', 'log', '-1', '--format=%ad', '--date=iso', remote_branch, '--', f]).decode('utf-8').strip()
             if log:
                 dt = datetime.strptime(log[:19], "%Y-%m-%d %H:%M:%S")
-                
                 if dt.hour == 0:
                     dt -= timedelta(days=1)
                 
-                # [수정됨] 요일 제한 로직 임시 주석 처리 (테스트용)
-                # if dt.weekday() not in [0, 2, 4]:
-                #     continue
-                
+                # 테스트 목적으로 모든 요일의 데이터가 수집되도록 필터링 해제
                 date_str = dt.strftime("%m-%d")
                 if date_str not in data:
                     data[date_str] = {x: 0 for x in users}
@@ -52,15 +48,18 @@ for k in sorted(data.keys(), reverse=True):
 try:
     with open(TARGET_FILE, 'r', encoding='utf-8') as f:
         content = f.read()
-    
-    new_content = re.sub(
-        r'.*?',
-        f'\n{table_content}',
-        content,
-        flags=re.DOTALL
-    )
-    
-    with open(TARGET_FILE, 'w', encoding='utf-8') as f:
-        f.write(new_content)
+
+    start_marker = ""
+    end_marker = ""
+
+    if start_marker in content and end_marker in content:
+        # 정규표현식 오류를 원천 차단하기 위해 텍스트 절단 방식(.split) 채택
+        before = content.split(start_marker)[0]
+        after = content.split(end_marker)[-1]
+        
+        new_content = before + start_marker + "\n" + table_content + end_marker + after
+        
+        with open(TARGET_FILE, 'w', encoding='utf-8') as f:
+            f.write(new_content)
 except FileNotFoundError:
     pass
