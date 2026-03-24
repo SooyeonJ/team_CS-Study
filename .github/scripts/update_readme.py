@@ -5,38 +5,52 @@ TARGET_FILE = 'coding_test.md'
 users = ['SooyeonJ', 'Chobochoi', 'dori-2i']
 data = {}
 
+# 데이터 수집 (개별 파일 탐색 -> 커밋 로그 단위 탐색으로 변경)
 for u in users:
     remote_branch = f"origin/{u}"
     try:
-        fs_out = subprocess.check_output(['git', 'ls-tree', '-r', '--name-only', remote_branch], stderr=subprocess.DEVNULL).decode('utf-8')
-        files = [x for x in fs_out.split('\n') if x.startswith('백준/') or x.startswith('프로그래머스/')]
+        # 백준, 프로그래머스 폴더에서 발생한 커밋 전체를 추출 (형식: 날짜|커밋메시지)
+        logs_out = subprocess.check_output(
+            ['git', 'log', '--format=%ad|%s', '--date=iso', remote_branch, '--', '백준', '프로그래머스'], 
+            stderr=subprocess.DEVNULL
+        ).decode('utf-8').strip()
+        
+        if not logs_out:
+            continue
+            
+        logs = logs_out.split('\n')
     except subprocess.CalledProcessError:
         continue
 
-    for f in files:
-        if 'Title:' not in f:
+    # 추출된 커밋 로그 분석
+    for log in logs:
+        if '|' not in log:
             continue
+        dt_str, msg = log.split('|', 1)
+        
+        # 커밋 메시지에 백준허브 고유 키워드인 'Title:'이 있는 경우만 문제 풀이로 인정
+        if 'Title:' not in msg:
+            continue
+            
         try:
-            log = subprocess.check_output(['git', 'log', '-1', '--format=%ad', '--date=iso', remote_branch, '--', f], stderr=subprocess.DEVNULL).decode('utf-8').strip()
-            if log:
-                dt = datetime.strptime(log[:19], "%Y-%m-%d %H:%M:%S")
-                
-                # 커밋 시간에서 1시간을 차감하여 '익일 01:00' 마감 기준을 '당일 00:00' 기준으로 정규화
-                adjusted_dt = dt - timedelta(hours=1)
-                wd = adjusted_dt.weekday()
-                
-                # 현재 요일(wd) 기준으로 다음 번 마감일(월, 수, 금)까지 더해야 하는 일(Days) 수 매핑
-                # 0:월, 1:화, 2:수, 3:목, 4:금, 5:토, 6:일
-                shift_days = {0: 0, 1: 1, 2: 0, 3: 1, 4: 0, 5: 2, 6: 1}
-                target_dt = adjusted_dt + timedelta(days=shift_days[wd])
-                
-                date_str = target_dt.strftime("%m-%d")
-                if date_str not in data:
-                    data[date_str] = {x: 0 for x in users}
-                data[date_str][u] += 1
-        except subprocess.CalledProcessError:
+            dt = datetime.strptime(dt_str[:19], "%Y-%m-%d %H:%M:%S")
+            
+            # 익일 1시 마감 보정 및 월/수/금 선행 매핑 로직
+            adjusted_dt = dt - timedelta(hours=1)
+            wd = adjusted_dt.weekday()
+            
+            shift_days = {0: 0, 1: 1, 2: 0, 3: 1, 4: 0, 5: 2, 6: 1}
+            target_dt = adjusted_dt + timedelta(days=shift_days[wd])
+            
+            date_str = target_dt.strftime("%m-%d")
+            
+            if date_str not in data:
+                data[date_str] = {x: 0 for x in users}
+            data[date_str][u] += 1
+        except Exception:
             pass
 
+# 마크다운 표 생성
 table_content = "\n\n| 날짜 | 요일 | SooyeonJ | Chobochoi | dori-2i |\n|:---:|:---:|:---:|:---:|:---:|\n"
 for k in sorted(data.keys(), reverse=True):
     dt_obj = datetime.strptime(f"{datetime.now().year}-{k}", "%Y-%m-%d")
@@ -48,6 +62,7 @@ for k in sorted(data.keys(), reverse=True):
     table_content += row + "\n"
 table_content += "\n"
 
+# 파일 업데이트
 if os.path.exists(TARGET_FILE):
     with open(TARGET_FILE, 'r', encoding='utf-8') as f:
         content = f.read()
