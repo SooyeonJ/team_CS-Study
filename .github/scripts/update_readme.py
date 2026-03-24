@@ -69,8 +69,8 @@ for month_key, data in monthly_data.items():
             content = f.read()
 
         # 월별 파일에 적용될 파싱 구분자 지정
-        s_mark = "# 코딩테스트 진행 과정"
-        e_mark = "# 한 줄 회고"
+        s_mark = "## 코딩테스트 진행 과정"
+        e_mark = "## 한 줄 회고"
 
         if s_mark in content and e_mark in content:
             before = content.split(s_mark)[0]
