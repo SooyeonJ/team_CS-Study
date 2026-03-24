@@ -43,5 +43,5 @@ jobs:
             echo "업데이트할 새로운 데이터가 없습니다. (변경점 없음)"
           else
             git commit -m "docs: Update problem solving status"
-            git push origin main || { echo "Push 차단됨: 브랜치 보호 규칙(Branch Protection) 또는 권한(Permission)을 확인하십시오."; exit 1; }
+            git push origin main || { echo "Push 차단됨: 브랜치 보호 규칙이나 권한을 확인하세요."; exit 1; }
           fi
