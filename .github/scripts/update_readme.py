@@ -20,10 +20,17 @@ for u in users:
             log = subprocess.check_output(['git', 'log', '-1', '--format=%ad', '--date=iso', remote_branch, '--', f], stderr=subprocess.DEVNULL).decode('utf-8').strip()
             if log:
                 dt = datetime.strptime(log[:19], "%Y-%m-%d %H:%M:%S")
-                if dt.hour == 0:
-                    dt -= timedelta(days=1)
                 
-                date_str = dt.strftime("%m-%d")
+                # 커밋 시간에서 1시간을 차감하여 '익일 01:00' 마감 기준을 '당일 00:00' 기준으로 정규화
+                adjusted_dt = dt - timedelta(hours=1)
+                wd = adjusted_dt.weekday()
+                
+                # 현재 요일(wd) 기준으로 다음 번 마감일(월, 수, 금)까지 더해야 하는 일(Days) 수 매핑
+                # 0:월, 1:화, 2:수, 3:목, 4:금, 5:토, 6:일
+                shift_days = {0: 0, 1: 1, 2: 0, 3: 1, 4: 0, 5: 2, 6: 1}
+                target_dt = adjusted_dt + timedelta(days=shift_days[wd])
+                
+                date_str = target_dt.strftime("%m-%d")
                 if date_str not in data:
                     data[date_str] = {x: 0 for x in users}
                 data[date_str][u] += 1
@@ -45,7 +52,6 @@ if os.path.exists(TARGET_FILE):
     with open(TARGET_FILE, 'r', encoding='utf-8') as f:
         content = f.read()
 
-    # 눈에 보이지 않는 주석 대신 마크다운에 작성된 제목 텍스트를 직접 구분자로 사용
     s_mark = "# 코딩테스트 진행 과정"
     e_mark = "# 📆 문제 일정 (고득점 Kit 기준)"
 
@@ -53,7 +59,6 @@ if os.path.exists(TARGET_FILE):
         before = content.split(s_mark)[0]
         after = content.split(e_mark)[-1]
         
-        # 파일 덮어쓰기
         with open(TARGET_FILE, 'w', encoding='utf-8') as f:
             f.write(before + s_mark + table_content + e_mark + after)
     else:
