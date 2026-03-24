@@ -29,15 +29,15 @@ jobs:
       - name: Run Update Script
         run: python .github/scripts/update_readme.py
 
-      - name: Commit and Push
+     - name: Commit and Push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add coding_test.md
+          git add 2026-*.md
           
           if git diff --staged --quiet; then
             echo "업데이트할 새로운 데이터가 없습니다. (변경점 없음)"
           else
-            git commit -m "docs: Update problem solving status"
+            git commit -m "docs: Update monthly problem solving status"
             git push origin main
           fi
