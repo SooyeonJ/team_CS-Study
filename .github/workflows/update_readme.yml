@@ -1,4 +1,4 @@
-name: Update README via Cron
+name: Update README
 
 on:
   schedule:
@@ -8,6 +8,10 @@ on:
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
+# [핵심] Action Bot이 main 브랜치에 코드를 쓸 수 있도록 쓰기 권한 명시적 부여
+permissions:
+  contents: write
+
 jobs:
   update-readme:
     runs-on: ubuntu-latest
@@ -15,20 +19,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
-          ref: main 
+          fetch-depth: 0 # 모든 브랜치의 히스토리를 가져옴
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-
-      - name: Path Check
-        run: |
-          if [ ! -f ".github/scripts/update_readme.py" ]; then
-            echo "Error: 파이썬 파일이 올바른 경로에 없습니다."
-            exit 1
-          fi
 
       - name: Run Update Script
         run: python .github/scripts/update_readme.py
@@ -39,9 +35,9 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add coding_test.md
           
-          if [ -z "$(git diff --staged --name-only)" ]; then
+          if git diff --staged --quiet; then
             echo "업데이트할 새로운 데이터가 없습니다. (변경점 없음)"
           else
             git commit -m "docs: Update problem solving status"
-            git push origin main || { echo "Push 차단됨: 브랜치 보호 규칙이나 권한을 확인하세요."; exit 1; }
+            git push origin main
           fi
