@@ -9,7 +9,6 @@ data = {}
 for u in users:
     remote_branch = f"origin/{u}"
     try:
-        # 깃허브 액션 환경에서 해당 브랜치가 존재하는지 검증
         fs_out = subprocess.check_output(['git', 'ls-tree', '-r', '--name-only', remote_branch], stderr=subprocess.DEVNULL).decode('utf-8')
         files = [x for x in fs_out.split('\n') if x.startswith('백준/') or x.startswith('프로그래머스/')]
     except subprocess.CalledProcessError:
@@ -48,6 +47,7 @@ if os.path.exists(TARGET_FILE):
     with open(TARGET_FILE, 'r', encoding='utf-8') as f:
         content = f.read()
 
+    # 수정된 구분자 변수
     s_mark = ""
     e_mark = ""
 
