@@ -13,10 +13,10 @@
 | 연도 | 문제 파일 | 미수 | 수연 | 재이 |
 |------|------------|------|------|------|
 | 2025 | [2025 국회직 컴퓨터일반.pdf](https://github.com/user-attachments/files/25560632/2025.pdf) |  |  |  | 
-| 2022 | [2022 국회직 컴퓨터일반.pdf](https://github.com/user-attachments/files/25560631/2022.pdf) |  | 65 |  |
-| 2021 | [2021 국회직 컴퓨터일반.pdf](https://github.com/user-attachments/files/25560630/2021.pdf) |  | 65 |  |
-| 2020 | [2020 국회직 컴퓨터일반.pdf](https://github.com/user-attachments/files/25560629/2020.pdf) |  |  |  |
-| 2019 | [2019 국회직 컴퓨터일반.pdf](https://github.com/user-attachments/files/25560640/2019.pdf) |  | 60 |  |
+| 2022 | [2022 국회직 컴퓨터일반.pdf](https://github.com/user-attachments/files/25560631/2022.pdf) | 75 | 65 |  |
+| 2021 | [2021 국회직 컴퓨터일반.pdf](https://github.com/user-attachments/files/25560630/2021.pdf) | 55 | 65 |  |
+| 2020 | [2020 국회직 컴퓨터일반.pdf](https://github.com/user-attachments/files/25560629/2020.pdf) | 75 |  |  |
+| 2019 | [2019 국회직 컴퓨터일반.pdf](https://github.com/user-attachments/files/25560640/2019.pdf) | 60 | 60 |  |
 
 **국회직 컴퓨터일반 연도별 정답표 (2019, 2020, 2021, 2022, 2025년)**
 
