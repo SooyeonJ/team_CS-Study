@@ -4,12 +4,19 @@ from datetime import datetime, timedelta
 users = ['SooyeonJ', 'Chobochoi', 'dori-2i']
 monthly_data = {}
 
+# 깃허브 액션(Ubuntu)의 기본 타임존(UTC)을 한국 시간(KST)으로 강제 덮어쓰기
+env = os.environ.copy()
+env['TZ'] = 'Asia/Seoul'
+
 for u in users:
     remote_branch = f"origin/{u}"
     try:
+        # 경로 필터링('--', '백준', '프로그래머스')을 완전히 삭제하여 모든 커밋 로그 정상 수집
+        # format-local을 사용하여 커밋 시간을 KST 기준으로 일괄 변환하여 추출
         logs_out = subprocess.check_output(
-            ['git', 'log', '--format=%ad|%s', '--date=iso', remote_branch, '--', '백준', '프로그래머스'], 
-            stderr=subprocess.DEVNULL
+            ['git', 'log', '--format=%ad|%s', '--date=format-local:%Y-%m-%d %H:%M:%S', remote_branch], 
+            stderr=subprocess.DEVNULL,
+            env=env
         ).decode('utf-8').strip()
         
         if not logs_out:
@@ -24,6 +31,7 @@ for u in users:
             continue
         dt_str, msg = log.split('|', 1)
         
+        # 폴더명 대신 백준허브 고유의 커밋 컨벤션인 'Title:' 유무로만 필터링
         if 'Title:' not in msg:
             continue
             
@@ -65,9 +73,8 @@ for month_key, data in monthly_data.items():
         with open(target_file, 'r', encoding='utf-8') as f:
             content = f.read()
 
-        # 실제 사용 중인 마크다운 구조와 1:1로 완벽히 매칭된 구분자
         s_mark = "## 코딩테스트 진행 과정"
-        e_mark = "## 💰 벌금 예외 사항"
+        e_mark = "# 한 줄 회고"
 
         if s_mark in content and e_mark in content:
             before = content.split(s_mark)[0]
