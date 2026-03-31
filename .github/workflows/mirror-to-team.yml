@@ -36,3 +36,4 @@ jobs:
 
           # 미러 전용 브랜치: 원격 SooyeonJ를 항상 개인 레포 상태로 덮어씀
           git push team "HEAD:SooyeonJ" --force
+          
