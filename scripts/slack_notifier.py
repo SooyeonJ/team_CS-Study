@@ -58,8 +58,8 @@ def send_slack_message(data, date_str):
         print(f"Error: Slack API returned {response.status_code}")
 
 if __name__ == "__main__":
-    #today_date = get_today_kst()
-    today_date = "04-01"
+    today_date = get_today_kst()
+    #today_date = "04-01"
     problem_data = parse_today_problem(today_date)
 
     if problem_data:
