@@ -4,15 +4,15 @@ from datetime import datetime, timedelta
 users = ['SooyeonJ', 'Chobochoi', 'dori-2i']
 monthly_data = {}
 
-# 깃허브 액션(Ubuntu)의 기본 타임존(UTC)을 한국 시간(KST)으로 강제 덮어쓰기
+# KST 환경 설정
 env = os.environ.copy()
 env['TZ'] = 'Asia/Seoul'
 
+print("--- 데이터 수집 시작 ---")
 for u in users:
     remote_branch = f"origin/{u}"
     try:
-        # 경로 필터링('--', '백준', '프로그래머스')을 완전히 삭제하여 모든 커밋 로그 정상 수집
-        # format-local을 사용하여 커밋 시간을 KST 기준으로 일괄 변환하여 추출
+        # fetch --all 이후 최신 로그 수집
         logs_out = subprocess.check_output(
             ['git', 'log', '--format=%ad|%s', '--date=format-local:%Y-%m-%d %H:%M:%S', remote_branch], 
             stderr=subprocess.DEVNULL,
@@ -23,24 +23,24 @@ for u in users:
             continue
             
         logs = logs_out.split('\n')
+        print(f"User {u}: {len(logs)}개의 커밋 발견")
     except subprocess.CalledProcessError:
+        print(f"User {u}: 브랜치를 찾을 수 없거나 로그 읽기 실패")
         continue
 
     for log in logs:
-        if '|' not in log:
-            continue
+        if '|' not in log: continue
         dt_str, msg = log.split('|', 1)
-        
-        # 폴더명 대신 백준허브 고유의 커밋 컨벤션인 'Title:' 유무로만 필터링
-        if 'Title:' not in msg:
-            continue
+        if 'Title:' not in msg: continue
             
         try:
             dt = datetime.strptime(dt_str[:19], "%Y-%m-%d %H:%M:%S")
             
+            # 익일 1시 마감 및 월/수/금 선행 매핑
             adjusted_dt = dt - timedelta(hours=1)
             wd = adjusted_dt.weekday()
             
+            # 다음 마감일 계산 (0:월, 1:화, 2:수, 3:목, 4:금, 5:토, 6:일)
             shift_days = {0: 0, 1: 1, 2: 0, 3: 1, 4: 0, 5: 2, 6: 1}
             target_dt = adjusted_dt + timedelta(days=shift_days[wd])
             
@@ -55,6 +55,7 @@ for u in users:
         except Exception:
             pass
 
+print("--- 파일 업데이트 시작 ---")
 for month_key, data in monthly_data.items():
     target_file = f"{month_key}.md"
     
@@ -62,7 +63,6 @@ for month_key, data in monthly_data.items():
     for k in sorted(data.keys(), reverse=True):
         dt_obj = datetime.strptime(f"{month_key[:4]}-{k}", "%Y-%m-%d")
         weekday_kr = ["월", "화", "수", "목", "금", "토", "일"][dt_obj.weekday()]
-        
         row = f"| {k} | {weekday_kr} |"
         for u in users:
             row += f" O ({data[k][u]}) |" if data[k][u] > 0 else " X |"
@@ -73,16 +73,17 @@ for month_key, data in monthly_data.items():
         with open(target_file, 'r', encoding='utf-8') as f:
             content = f.read()
 
+        # [수정] 요청하신 새로운 종료 마커 적용
         s_mark = "## 코딩테스트 진행 과정"
         e_mark = "## 💰 벌금 예외 사항"
 
         if s_mark in content and e_mark in content:
             before = content.split(s_mark)[0]
             after = content.split(e_mark)[-1]
-            
             with open(target_file, 'w', encoding='utf-8') as f:
                 f.write(before + s_mark + table_content + e_mark + after)
+            print(f"Success: {target_file} 업데이트 완료")
         else:
-            print(f"Warning: {target_file} 파일 내에 구분자 헤더가 없습니다.")
+            print(f"Warning: {target_file} 내 마커 불일치 ({s_mark} 또는 {e_mark} 누락)")
     else:
-        print(f"Warning: {target_file} 파일이 존재하지 않아 건너뜁니다.")
+        print(f"Warning: {target_file} 파일 없음, 스킵")
