@@ -4,7 +4,6 @@ from datetime import datetime, timedelta
 users = ['SooyeonJ', 'Chobochoi', 'dori-2i']
 monthly_data = {}
 
-# 데이터 수집 및 월별 그룹화
 for u in users:
     remote_branch = f"origin/{u}"
     try:
@@ -37,7 +36,6 @@ for u in users:
             shift_days = {0: 0, 1: 1, 2: 0, 3: 1, 4: 0, 5: 2, 6: 1}
             target_dt = adjusted_dt + timedelta(days=shift_days[wd])
             
-            # 연-월(YYYY-MM)을 추출하여 파일명 기준으로 사용
             month_key = target_dt.strftime("%Y-%m") 
             date_str = target_dt.strftime("%m-%d")  
             
@@ -49,7 +47,6 @@ for u in users:
         except Exception:
             pass
 
-# 월별로 독립된 마크다운 파일 업데이트 진행
 for month_key, data in monthly_data.items():
     target_file = f"{month_key}.md"
     
@@ -68,9 +65,9 @@ for month_key, data in monthly_data.items():
         with open(target_file, 'r', encoding='utf-8') as f:
             content = f.read()
 
-        # 월별 파일에 적용될 파싱 구분자 지정
+        # 실제 사용 중인 마크다운 구조와 1:1로 완벽히 매칭된 구분자
         s_mark = "## 코딩테스트 진행 과정"
-        e_mark = "## 💰 벌금 예외 사항"
+        e_mark = "# 한 줄 회고"
 
         if s_mark in content and e_mark in content:
             before = content.split(s_mark)[0]
