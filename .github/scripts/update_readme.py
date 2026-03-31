@@ -67,7 +67,7 @@ for month_key, data in monthly_data.items():
 
         # 실제 사용 중인 마크다운 구조와 1:1로 완벽히 매칭된 구분자
         s_mark = "## 코딩테스트 진행 과정"
-        e_mark = "# 한 줄 회고"
+        e_mark = "## 💰 벌금 예외 사항"
 
         if s_mark in content and e_mark in content:
             before = content.split(s_mark)[0]
