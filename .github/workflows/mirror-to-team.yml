@@ -22,7 +22,7 @@ jobs:
 
       - name: Push to team repo (to SooyeonJ branch)
         env:
-          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN_ }}
         run: |
           set -e
 
