@@ -1,0 +1,27 @@
+name: Daily Problem Notice
+
+on:
+  schedule:
+    # 한국 시간(KST) 오전 9시는 UTC 기준 00:00입니다.
+    - cron: '0 0 * * *'
+  workflow_dispatch: # 수동 실행 기능 유지
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run Slack Notifier
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: python scripts/slack_notifier.py
