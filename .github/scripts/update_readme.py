@@ -11,7 +11,7 @@ env['TZ'] = 'Asia/Seoul'
 for u in users:
     remote_branch = f"origin/{u}"
     try:
-        # 날짜 제한 없이 모든 커밋 로그를 전부 수집 (전체 기록 복구용)
+        # 모든 커밋 로그 수집
         logs_out = subprocess.check_output(
             ['git', 'log', '--format=%ad|%s', '--date=format-local:%Y-%m-%d %H:%M:%S', remote_branch], 
             stderr=subprocess.DEVNULL, env=env
@@ -26,17 +26,15 @@ for u in users:
         if '|' not in log: continue
         dt_str, msg = log.split('|', 1)
         
-        # 백준허브의 고유 식별자인 'Title:' 키워드 유무로 코딩테스트 풀이 여부 판별
+        # 백준허브 식별자 확인
         if 'Title:' not in msg: continue
             
         try:
             dt = datetime.strptime(dt_str[:19], "%Y-%m-%d %H:%M:%S")
             
-            # 익일 오전 1시 마감 기준 처리 및 요일 매핑
-            adjusted_dt = dt - timedelta(hours=1)
-            wd = adjusted_dt.weekday()
-            shift_days = {0: 0, 1: 1, 2: 0, 3: 1, 4: 0, 5: 2, 6: 1}
-            target_dt = adjusted_dt + timedelta(days=shift_days[wd])
+            # 익일 오전 1시 마감 기준 처리 (오전 1시 이전 커밋은 전날 기록으로 인정)
+            # 매일 업데이트를 위해 shift_days 로직 제거
+            target_dt = dt - timedelta(hours=1)
             
             month_key = target_dt.strftime("%Y-%m") 
             date_str = target_dt.strftime("%m-%d")  
@@ -53,6 +51,7 @@ for month_key, data in monthly_data.items():
     target_file = f"{month_key}.md"
     
     table_content = "\n\n| 날짜 | 요일 | SooyeonJ | Chobochoi | dori-2i |\n|:---:|:---:|:---:|:---:|:---:|\n"
+    # 날짜별로 내림차순 정렬하여 테이블 생성
     for k in sorted(data.keys(), reverse=True):
         dt_obj = datetime.strptime(f"{month_key[:4]}-{k}", "%Y-%m-%d")
         weekday_kr = ["월", "화", "수", "목", "금", "토", "일"][dt_obj.weekday()]
