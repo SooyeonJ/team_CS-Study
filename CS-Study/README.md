@@ -61,10 +61,10 @@
 |---|---|---|---|---|---|
 | 3월 1주차 | 데이터베이스론 | 트랜잭션 | ACID, TCL(COMMIT/ROLLBACK), 동시성 제어, 2PL, Deadlock | 2020 Ⅰ-2, 2023 Ⅰ-2 | ☐ |
 | 3월 2주차 | 데이터베이스론 | 정규화 | 함수 종속, 이상(삽입/삭제/갱신), 2NF, 3NF | 2021 Ⅰ-1, 2024 Ⅰ-1 | ☐ |
-| 3월 3주차 | 운영체제론 | 메모리 관리 | Paging, Segment, MMU, 주소 변환, 내외부 단편화 | 2021 Ⅰ-3(3Q), 2022 Ⅰ-5(5Q), 2023 Ⅰ-9(2Q) | ✅ |
-| 3월 4주차 | 운영체제론 | 페이지 교체 / 교착상태 | FIFO, LRU, Thrashing, Working Set / 교착상태 | 2022 Ⅰ-5, 2023 Ⅰ-9 | ☐ |
-| 4월 1주차 | 운영체제론 | 프로세스 관리 | 프로세스 vs 스레드, Spinlock, Mutex, 시스템콜(fork, wait) | 2023 Ⅰ-8 | ☐ |
-| 4월 2주차 | 운영체제론 | CPU 스케줄링 | FCFS, SRT, 선점/비선점, 간트차트, Banker Algorithm | 2024 Ⅰ-10 | ☐ |
+| 3월 3주차 | 운영체제론 | 메모리 관리 | Paging, Segment, MMU, 주소 변환, 내외부 단편화 | 2021 Ⅰ-3(3Q), 2022 Ⅰ-5(5Q), 2023 Ⅰ-9(2Q) | ㅁ |
+| 3월 4주차 | 운영체제론 | 페이지 교체 / 교착상태 | FIFO, LRU, Thrashing, Working Set / 교착상태 | 2022 Ⅰ-5, 2023 Ⅰ-9 | ✅ |
+| 4월 1주차 | 운영체제론 | 프로세스 관리 | 프로세스 vs 스레드, Spinlock, Mutex, 시스템콜(fork, wait) | 2023 Ⅰ-8 | ✅ |
+| 4월 2주차 | 운영체제론 | CPU 스케줄링 | FCFS, SRT, 선점/비선점, 간트차트, Banker Algorithm | 2024 Ⅰ-10 | ✅ |
 | 4월 3주차 | 데이터통신론 | 네트워크 구조 | OSI 7계층, TCP/IP 4계층, TCP vs UDP | 2024 Ⅰ-5 | ☐ |
 | 4월 4주차 | 데이터통신론 | IP 및 라우팅 | DHCP, Subnet Mask, Distance Vector, Link State, Dijkstra | 2021 Ⅰ-4, 2022 Ⅰ-3 | ☐ |
 | 5월 1주차 | 데이터통신론 | TCP 통신 | ARP/RARP, TCP 3-way handshake, 혼잡 제어 | 2023 Ⅰ-6, Ⅰ-7 | ☐ |
