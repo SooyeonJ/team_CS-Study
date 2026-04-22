@@ -8,19 +8,14 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 - 따라서 Dict(해시)를 활용한 풀이가 필요
 - Counter : "개수 세기" 전용
 - Dict : 위치 / 관계 / 조합 / 상태 변화 처리
----
 
-## 🗂️ 문제 목록
+#### 🗂️ 해시(딕셔너리) 문제 목록
 
 | 문제명 | 레벨 | 유형 | 링크 |
 |--------|------|------|------|
+| 가장 가까운 같은 글자 | Lv1 | 해시 + 문자열 | https://school.programmers.co.kr/learn/courses/30/lessons/142086 |
+| 성격 유형 검사하기 | Lv1 | 해시 + 구현 | https://school.programmers.co.kr/learn/courses/30/lessons/118666 |
+| 신고 결과 받기 | Lv1 | 해시 + 집합 | https://school.programmers.co.kr/learn/courses/30/lessons/92334 |
 | 달리기 경주 | Lv1 | 해시 + 시뮬레이션 | https://school.programmers.co.kr/learn/courses/30/lessons/178871 |
 | 전화번호 목록 | Lv2 | 해시 + 문자열 | https://school.programmers.co.kr/learn/courses/30/lessons/42577 |
 | 의상 | Lv2 | 해시 + 조합 | https://school.programmers.co.kr/learn/courses/30/lessons/42578 |
-
----
-
-## 💡 풀이 전략
-- **순서 변경 문제** → dict (index 관리)
-- **문자열 관계 문제** → dict / 정렬
-- **조합 문제** → dict + 수학 공식
