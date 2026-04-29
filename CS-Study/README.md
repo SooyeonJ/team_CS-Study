@@ -14,7 +14,7 @@
 |------|------------|------|------|------|
 | 2025 | [2025 국회직 컴퓨터일반.pdf](https://github.com/user-attachments/files/25560632/2025.pdf) | 70 | 65 |  | 
 | 2022 | [2022 국회직 컴퓨터일반.pdf](https://github.com/user-attachments/files/25560631/2022.pdf) | 75 | 65 |  |
-| 2021 | [2021 국회직 컴퓨터일반.pdf](https://github.com/user-attachments/files/25560630/2021.pdf) | 55 | 65 |  |
+| 2021 | [2021 국회직 컴퓨터일반.pdf](https://github.com/user-attachments/files/25560630/2021.pdf) | 55 | 65 | 75 |
 | 2020 | [2020 국회직 컴퓨터일반.pdf](https://github.com/user-attachments/files/25560629/2020.pdf) | 75 |  | 55 |
 | 2019 | [2019 국회직 컴퓨터일반.pdf](https://github.com/user-attachments/files/25560640/2019.pdf) | 60 | 60 | 70 |
 
