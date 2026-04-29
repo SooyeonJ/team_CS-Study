@@ -1,9 +1,7 @@
 def gcd(a,b):
     
     while b!=0:
-        tmp=a
-        a=b
-        b=tmp%b
+        a,b=b,a%b
         
     return a
 
