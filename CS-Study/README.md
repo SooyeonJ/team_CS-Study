@@ -58,14 +58,15 @@
 ---
 
 ## 🏛 7급 기출
-| 과목 | 2025년 | 2024년 | 2023년 | 2022년 | 2021년 |
-| :--- | :---: | :---: | :---: | :---: | :---: |
-| **데이터베이스론** | [다운로드](https://github.com/user-attachments/files/25814164/2025.7.pdf) | [다운로드](https://github.com/user-attachments/files/25814169/2024.7.pdf) | [다운로드](https://github.com/user-attachments/files/25814168/2023.7.pdf) | [다운로드](https://github.com/user-attachments/files/25814167/2022.7.pdf) | [다운로드](https://github.com/user-attachments/files/25814166/2021.7.pdf) |
-| **소프트웨어공학** | [다운로드](https://github.com/user-attachments/files/25814174/2025.7.pdf) | [다운로드](https://github.com/user-attachments/files/25814173/2024.7.pdf) | [다운로드](https://github.com/user-attachments/files/25814172/2023.7.pdf) | [다운로드](https://github.com/user-attachments/files/25814171/2022.7.pdf) | [다운로드](https://github.com/user-attachments/files/25814170/2021.7.pdf) |
-| **자료구조론** | [다운로드](https://github.com/user-attachments/files/25814181/2025.7.pdf) | [다운로드](https://github.com/user-attachments/files/25814180/2024.7.pdf) | [다운로드](https://github.com/user-attachments/files/25814179/2023.7.pdf) | [다운로드](https://github.com/user-attachments/files/25814178/2022.7.pdf) | [다운로드](https://github.com/user-attachments/files/25814176/2021.7.pdf) |
-| **정보보호론** | [다운로드](https://github.com/user-attachments/files/25814187/2025.7.pdf) | [다운로드](https://github.com/user-attachments/files/25814185/2024.7.pdf) | [다운로드](https://github.com/user-attachments/files/25814184/2023.7.pdf) | [다운로드](https://github.com/user-attachments/files/25814183/2022.7.pdf) | [다운로드](https://github.com/user-attachments/files/25814182/2021.7.pdf) |
-| **알고리즘** | [다운로드](https://github.com/user-attachments/files/25814190/2025.7.pdf) | [다운로드](https://github.com/user-attachments/files/25814189/2024.7.pdf) | [다운로드](https://github.com/user-attachments/files/25814188/2023.7.pdf) | - | - |
-| **인공지능** | [다운로드](https://github.com/user-attachments/files/25814193/2025.7.pdf) | [다운로드](https://github.com/user-attachments/files/25814192/2024.7.pdf) | [다운로드](https://github.com/user-attachments/files/25814191/2023.7.pdf) | - | - |
+
+| 과목 | 2025년 | 2024년 | 2023년 | 2022년 | 2021년 | 미수 | 수연 | 재이 |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 데이터베이스론 | 다운로드 | 다운로드 | 다운로드 | 다운로드 | 다운로드 | [-, -, -, -, -] | [-, -, -, -, -] | [-, -, -, -, -] |
+| 소프트웨어공학 | 다운로드 | 다운로드 | 다운로드 | 다운로드 | 다운로드 | [-, -, -, -, -] | [-, -, -, -, -] | [-, -, -, -, -] |
+| 자료구조론 | 다운로드 | 다운로드 | 다운로드 | 다운로드 | 다운로드 | [-, -, -, -, -] | [-, -, -, -, -] | [-, -, -, -, -] |
+| 정보보호론 | 다운로드 | 다운로드 | 다운로드 | 다운로드 | 다운로드 | [-, -, -, -, -] | [-, -, -, -, -] | [-, -, -, -, -] |
+| 알고리즘 | 다운로드 | 다운로드 | 다운로드 |  |  | [-, -, -] | [-, -, -] | [-, -, -] |
+| 인공지능 | 다운로드 | 다운로드 | 다운로드 |  |  | [-, -, -] | [-, -, -] | [-, -, -] |
 
 ---
 
