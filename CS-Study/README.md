@@ -62,37 +62,37 @@
 | 과목 | 2025년 | 2024년 | 2023년 | 2022년 | 2021년 | 미수 | 수연 | 재이 |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | 데이터베이스론 | [다운로드]([2025 국가직 7급 데이터베이스론.pdf](https://github.com/user-attachments/files/27330707/2025.7.pdf)
-) | [다운로드]([2024 국가직 7급 데이터베이스론.pdf](https://github.com/user-attachments/files/27330711/2024.7.pdf)
-) | [다운로드]([2023 국가직 7급 데이터베이스론.pdf](https://github.com/user-attachments/files/27330718/2023.7.pdf)
-) | [다운로드]([2022 국가직 7급 데이터베이스론.pdf](https://github.com/user-attachments/files/27330719/2022.7.pdf)
-) | [다운로드]([2021 국가직 7급 데이터베이스론.pdf](https://github.com/user-attachments/files/27330605/2021.7.pdf)
-) | [-, -, -, -, -] | [-, -, -, -, -] | [-, -, -, -, -] |
+| [다운로드]([2024 국가직 7급 데이터베이스론.pdf](https://github.com/user-attachments/files/27330711/2024.7.pdf)
+| [다운로드]([2023 국가직 7급 데이터베이스론.pdf](https://github.com/user-attachments/files/27330718/2023.7.pdf)
+| [다운로드]([2022 국가직 7급 데이터베이스론.pdf](https://github.com/user-attachments/files/27330719/2022.7.pdf)
+| [다운로드]([2021 국가직 7급 데이터베이스론.pdf](https://github.com/user-attachments/files/27330605/2021.7.pdf)
+| [-, -, -, -, -] | [-, -, -, -, -] | [-, -, -, -, -] |
 | 소프트웨어공학 | [다운로드]([2025 국가직 7급 소프트웨어공학.pdf](https://github.com/user-attachments/files/27330722/2025.7.pdf)
-) | [다운로드]([2024 국가직 7급 소프트웨어공학.pdf](https://github.com/user-attachments/files/27330723/2024.7.pdf)
-) | [다운로드]([2023 국가직 7급 소프트웨어공학.pdf](https://github.com/user-attachments/files/27330728/2023.7.pdf)
-) | [다운로드]([2022 국가직 7급 소프트웨어공학.pdf](https://github.com/user-attachments/files/27330737/2022.7.pdf)
-) | [다운로드]([2021 국가직 7급 소프트웨어공학.pdf](https://github.com/user-attachments/files/27330739/2021.7.pdf)
-) | [-, -, -, -, -] | [-, -, -, -, -] | [-, -, -, -, -] |
+| [다운로드]([2024 국가직 7급 소프트웨어공학.pdf](https://github.com/user-attachments/files/27330723/2024.7.pdf)
+| [다운로드]([2023 국가직 7급 소프트웨어공학.pdf](https://github.com/user-attachments/files/27330728/2023.7.pdf)
+| [다운로드]([2022 국가직 7급 소프트웨어공학.pdf](https://github.com/user-attachments/files/27330737/2022.7.pdf)
+| [다운로드]([2021 국가직 7급 소프트웨어공학.pdf](https://github.com/user-attachments/files/27330739/2021.7.pdf)
+| [-, -, -, -, -] | [-, -, -, -, -] | [-, -, -, -, -] |
 | 자료구조론 | [다운로드]([2025 국가직 7급 자료구조론.pdf](https://github.com/user-attachments/files/27330741/2025.7.pdf)
-) | [다운로드]([2024 국가직 7급 자료구조론.pdf](https://github.com/user-attachments/files/27330742/2024.7.pdf)
-) | [다운로드]([2023 국가직 7급 자료구조론.pdf](https://github.com/user-attachments/files/27330743/2023.7.pdf)
-) | [다운로드]([2022 국가직 7급 자료구조론.pdf](https://github.com/user-attachments/files/27330744/2022.7.pdf)
-) | [다운로드]([2021 국가직 7급 자료구조론.pdf](https://github.com/user-attachments/files/27330748/2021.7.pdf)
-) | [-, -, -, -, -] | [-, -, -, -, -] | [-, -, -, -, -] |
+| [다운로드]([2024 국가직 7급 자료구조론.pdf](https://github.com/user-attachments/files/27330742/2024.7.pdf)
+| [다운로드]([2023 국가직 7급 자료구조론.pdf](https://github.com/user-attachments/files/27330743/2023.7.pdf)
+| [다운로드]([2022 국가직 7급 자료구조론.pdf](https://github.com/user-attachments/files/27330744/2022.7.pdf)
+| [다운로드]([2021 국가직 7급 자료구조론.pdf](https://github.com/user-attachments/files/27330748/2021.7.pdf)
+| [-, -, -, -, -] | [-, -, -, -, -] | [-, -, -, -, -] |
 | 정보보호론 | [다운로드]([2025 국가직 7급 정보보호론.pdf](https://github.com/user-attachments/files/27330765/2025.7.pdf)
-) | [다운로드]([2024 국가직 7급 정보보호론.pdf](https://github.com/user-attachments/files/27330769/2024.7.pdf)
-) | [다운로드]([2023 국가직 7급 정보보호론.pdf](https://github.com/user-attachments/files/27330770/2023.7.pdf)
-) | [다운로드]([2022 국가직 7급 정보보호론.pdf](https://github.com/user-attachments/files/27330771/2022.7.pdf)
-) | [다운로드]([2021 국가직 7급 정보보호론.pdf](https://github.com/user-attachments/files/27330772/2021.7.pdf)
+| [다운로드]([2024 국가직 7급 정보보호론.pdf](https://github.com/user-attachments/files/27330769/2024.7.pdf)
+| [다운로드]([2023 국가직 7급 정보보호론.pdf](https://github.com/user-attachments/files/27330770/2023.7.pdf)
+| [다운로드]([2022 국가직 7급 정보보호론.pdf](https://github.com/user-attachments/files/27330771/2022.7.pdf)
+| [다운로드]([2021 국가직 7급 정보보호론.pdf](https://github.com/user-attachments/files/27330772/2021.7.pdf)
 ) | [-, -, -, -, -] | [-, -, -, -, -] | [-, -, -, -, -] |
 | 알고리즘 | [다운로드]([2025 국가직 7급 알고리즘.pdf](https://github.com/user-attachments/files/27330773/2025.7.pdf)
-) | [다운로드]([2024 국가직 7급 알고리즘.pdf](https://github.com/user-attachments/files/27330776/2024.7.pdf)
-) | [다운로드]([2023 국가직 7급 알고리즘.pdf](https://github.com/user-attachments/files/27330778/2023.7.pdf)
-) | - | - | [-, -, -] | [-, -, -] | [-, -, -] |
+| [다운로드]([2024 국가직 7급 알고리즘.pdf](https://github.com/user-attachments/files/27330776/2024.7.pdf)
+| [다운로드]([2023 국가직 7급 알고리즘.pdf](https://github.com/user-attachments/files/27330778/2023.7.pdf)
+| - | - | [-, -, -] | [-, -, -] | [-, -, -] |
 | 인공지능 | [다운로드]([2025 국가직 7급 인공지능.pdf](https://github.com/user-attachments/files/27330782/2025.7.pdf)
-) | [다운로드]([2024 국가직 7급 인공지능.pdf](https://github.com/user-attachments/files/27330786/2024.7.pdf)
-) | [다운로드]([2023 국가직 7급 인공지능.pdf](https://github.com/user-attachments/files/27330791/2023.7.pdf)
-) | - | - | [-, -, -] | [-, -, -] | [-, -, -] |
+| [다운로드]([2024 국가직 7급 인공지능.pdf](https://github.com/user-attachments/files/27330786/2024.7.pdf)
+| [다운로드]([2023 국가직 7급 인공지능.pdf](https://github.com/user-attachments/files/27330791/2023.7.pdf)
+| - | - | [-, -, -] | [-, -, -] | [-, -, -] |
 
 ---
 
