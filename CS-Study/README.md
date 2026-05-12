@@ -47,7 +47,7 @@
 ## Part3. 9급 계리직
 
 | 연도 | 문제 파일 | 정답 | 미수 | 수연 | 재이 |
-|------|------------|-------------|
+|------|------------|-------------|-------------|-------------|-------------|
 | 2025 |[2025 계리직컴퓨터일반.pdf](https://github.com/user-attachments/files/25687503/2025.pdf) | [2025 계리직 정답.pdf](https://github.com/user-attachments/files/25687510/2025.pdf) | - | - | - |
 | 2024 |[2024 계리직 컴퓨터일반.pdf](https://github.com/user-attachments/files/25687502/2024.pdf) | [2024 계리직 정답.pdf](https://github.com/user-attachments/files/25687508/2024.pdf) | - | - | - |
 | 2023 |[2023 계리직 컴퓨터 일반.pdf](https://github.com/user-attachments/files/25687501/2023.pdf) | [2023 계리직 정답.pdf](https://github.com/user-attachments/files/25687507/2023.pdf) | - | - | - |
