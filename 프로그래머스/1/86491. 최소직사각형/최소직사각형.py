@@ -1,13 +1,13 @@
 def solution(sizes):
-    h=0
-    w=0
-    
-    for tag in sizes:
-        hmin = min(tag)
-        wmax = max(tag)
-        if hmin>h:
-            h=hmin
-        if wmax>w:
-            w=wmax
-    return h*w
+    x=[]
+    y=[]
+    for h,w in sizes:
+        if(w>=h):
+            x.append(w)
+            y.append(h)
+        elif h>w:
+            x.append(h)
+            y.append(w)
+            
+    return max(x)*max(y)
             
