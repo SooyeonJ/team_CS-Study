@@ -1,4 +1,8 @@
 def solution(nums):
-    max_pick = len(nums)//2
-    kind = len(set(nums))
-    return min(max_pick,kind)
+    
+    selectN = len(nums)//2
+    
+    if selectN>len(set(nums)):
+        return len(set(nums))
+    elif selectN<=len(set(nums)):
+        return selectN
