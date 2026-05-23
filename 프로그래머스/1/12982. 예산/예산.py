@@ -1,8 +1,11 @@
 def solution(d, budget):
-    answer = 0
-    for i in sorted(d):
-        # print(budget, i, 'cnt =', answer)
-        budget -= i
-        if (budget >= 0):
-            answer += 1
-    return answer
+    d = sorted(d)[::-1]
+    arr = []
+    if budget >= sum(d):
+            return len(d)
+    else:
+        for i, val in enumerate(d):
+            if budget >= sum(d[i+1:]):
+                arr.append(len(d[i+1:]))
+        return max(arr)
+    
