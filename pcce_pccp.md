@@ -12,32 +12,32 @@
 ---
 
 ## 📘 PCCE 기출문제
-
+ 
 | 레벨 | 번호 | 문제명 | 정답률 | 체크 |
 | :---: | :---: | :--- | :---: | :---: |
-| Lv.0 | 1번 | [출력](https://school.programmers.co.kr/learn/courses/30/lessons/250727) | 74% | - [ ] |
-| Lv.0 | 1번 | [문자 출력](https://school.programmers.co.kr/learn/courses/30/lessons/250732) | 73% | - [ ] |
-| Lv.0 | 2번 | [피타고라스의 정리](https://school.programmers.co.kr/learn/courses/30/lessons/250729) | 82% | - [ ] |
-| Lv.0 | 2번 | [각도 합치기](https://school.programmers.co.kr/learn/courses/30/lessons/250731) | 77% | - [ ] |
-| Lv.0 | 3번 | [나이 계산](https://school.programmers.co.kr/learn/courses/30/lessons/250730) | 81% | - [ ] |
-| Lv.0 | 3번 | [수 나누기](https://school.programmers.co.kr/learn/courses/30/lessons/250733) | 73% | - [ ] |
-| Lv.0 | 4번 | [저축](https://school.programmers.co.kr/learn/courses/30/lessons/250734) | 83% | - [ ] |
-| Lv.0 | 4번 | [병과분류](https://school.programmers.co.kr/learn/courses/30/lessons/250736) | 81% | - [ ] |
-| Lv.0 | 5번 | [산책](https://school.programmers.co.kr/learn/courses/30/lessons/250735) | 84% | - [ ] |
-| Lv.0 | 5번 | [심폐소생술](https://school.programmers.co.kr/learn/courses/30/lessons/250737) | 77% | - [ ] |
-| Lv.0 | 6번 | [가채점](https://school.programmers.co.kr/learn/courses/30/lessons/250738) | 76% | - [ ] |
-| Lv.0 | 6번 | [물 부족](https://school.programmers.co.kr/learn/courses/30/lessons/250740) | 66% | - [ ] |
-| Lv.0 | 7번 | [가습기](https://school.programmers.co.kr/learn/courses/30/lessons/250739) | 80% | - [ ] |
-| Lv.0 | 7번 | [버스](https://school.programmers.co.kr/learn/courses/30/lessons/250741) | 63% | - [ ] |
-| Lv.0 | 8번 | [닉네임 규칙](https://school.programmers.co.kr/learn/courses/30/lessons/250742) | 77% | - [ ] |
-| Lv.0 | 8번 | [창고 정리](https://school.programmers.co.kr/learn/courses/30/lessons/250743) | 67% | - [ ] |
-| Lv.1 | 9번 | [지폐 접기](https://school.programmers.co.kr/learn/courses/30/lessons/250744) | 66% | - [ ] |
-| Lv.1 | 9번 | [이웃한 칸](https://school.programmers.co.kr/learn/courses/30/lessons/250745) | 62% | - [ ] |
-| Lv.1 | 10번 | [데이터 분석](https://school.programmers.co.kr/learn/courses/30/lessons/250746) | 56% | - [ ] |
-| Lv.1 | 10번 | [공원](https://school.programmers.co.kr/learn/courses/30/lessons/250747) | 47% | - [ ] |
-
+| Lv.0 | 1번 | [출력](https://school.programmers.co.kr/learn/courses/30/lessons/250133) | 74% | - [ ] |
+| Lv.0 | 1번 | [문자 출력](https://school.programmers.co.kr/learn/courses/30/lessons/340207) | 73% | - [ ] |
+| Lv.0 | 2번 | [피타고라스의 정리](https://school.programmers.co.kr/learn/courses/30/lessons/250132) | 82% | - [ ] |
+| Lv.0 | 2번 | [각도 합치기](https://school.programmers.co.kr/learn/courses/30/lessons/340206) | 77% | - [ ] |
+| Lv.0 | 3번 | [나이 계산](https://school.programmers.co.kr/learn/courses/30/lessons/250131) | 81% | - [ ] |
+| Lv.0 | 3번 | [수 나누기](https://school.programmers.co.kr/learn/courses/30/lessons/340205) | 73% | - [ ] |
+| Lv.0 | 4번 | [저축](https://school.programmers.co.kr/learn/courses/30/lessons/250130) | 83% | - [ ] |
+| Lv.0 | 4번 | [병과분류](https://school.programmers.co.kr/learn/courses/30/lessons/340204) | 81% | - [ ] |
+| Lv.0 | 5번 | [산책](https://school.programmers.co.kr/learn/courses/30/lessons/250129) | 84% | - [ ] |
+| Lv.0 | 5번 | [심폐소생술](https://school.programmers.co.kr/learn/courses/30/lessons/340203) | 77% | - [ ] |
+| Lv.0 | 6번 | [가채점](https://school.programmers.co.kr/learn/courses/30/lessons/250128) | 76% | - [ ] |
+| Lv.0 | 6번 | [물 부족](https://school.programmers.co.kr/learn/courses/30/lessons/340202) | 66% | - [ ] |
+| Lv.0 | 7번 | [가습기](https://school.programmers.co.kr/learn/courses/30/lessons/250127) | 80% | - [ ] |
+| Lv.0 | 7번 | [버스](https://school.programmers.co.kr/learn/courses/30/lessons/340201) | 63% | - [ ] |
+| Lv.0 | 8번 | [닉네임 규칙](https://school.programmers.co.kr/learn/courses/30/lessons/340200) | 77% | - [ ] |
+| Lv.0 | 8번 | [창고 정리](https://school.programmers.co.kr/learn/courses/30/lessons/250126) | 67% | - [ ] |
+| Lv.1 | 9번 | [지폐 접기](https://school.programmers.co.kr/learn/courses/30/lessons/340199) | 66% | - [ ] |
+| Lv.1 | 9번 | [이웃한 칸](https://school.programmers.co.kr/learn/courses/30/lessons/250125) | 62% | - [ ] |
+| Lv.1 | 10번 | [데이터 분석](https://school.programmers.co.kr/learn/courses/30/lessons/250121) | 56% | - [ ] |
+| Lv.1 | 10번 | [공원](https://school.programmers.co.kr/learn/courses/30/lessons/340198) | 47% | - [ ] |
+ 
 ## 📙 PCCP 기출문제
-
+ 
 | 레벨 | 번호 | 문제명 | 정답률 | 체크 |
 | :---: | :---: | :--- | :---: | :---: |
 | Lv.1 | 1번 | [붕대 감기](https://school.programmers.co.kr/learn/courses/30/lessons/250137) | 45% | - [ ] |
