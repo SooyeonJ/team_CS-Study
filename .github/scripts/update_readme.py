@@ -8,56 +8,99 @@ monthly_data = {}
 env = os.environ.copy()
 env['TZ'] = 'Asia/Seoul'
 
+def get_category(commit_hash):
+    """커밋된 README.md의 문제 링크 URL로 SQL/알고리즘 구분"""
+    try:
+        files = subprocess.check_output(
+            ['git', 'diff-tree', '--no-commit-id', '-r', '--name-only', commit_hash],
+            stderr=subprocess.DEVNULL, env=env
+        ).decode('utf-8').strip().split('\n')
+
+        for f in files:
+            if 'README.md' not in f:
+                continue
+            content = subprocess.check_output(
+                ['git', 'show', f'{commit_hash}:{f}'],
+                stderr=subprocess.DEVNULL, env=env
+            ).decode('utf-8')
+
+            for line in content.split('\n'):
+                if 'programmers.co.kr' in line:
+                    if '/sql/' in line:
+                        return 'SQL'
+                    else:
+                        return '알고리즘'
+    except Exception:
+        pass
+    return '알고리즘'
+
 for u in users:
     remote_branch = f"origin/{u}"
     try:
-        # 모든 커밋 로그 수집
         logs_out = subprocess.check_output(
-            ['git', 'log', '--format=%ad|%s', '--date=format-local:%Y-%m-%d %H:%M:%S', remote_branch], 
+            ['git', 'log', '--format=%H|%ad|%s', '--date=format-local:%Y-%m-%d %H:%M:%S', remote_branch],
             stderr=subprocess.DEVNULL, env=env
         ).decode('utf-8').strip()
-        
-        if not logs_out: continue
+
+        if not logs_out:
+            continue
         logs = logs_out.split('\n')
     except Exception:
         continue
 
     for log in logs:
-        if '|' not in log: continue
-        dt_str, msg = log.split('|', 1)
-        
+        if '|' not in log:
+            continue
+        parts = log.split('|', 2)
+        if len(parts) < 3:
+            continue
+        commit_hash, dt_str, msg = parts
+
         # 백준허브 식별자 확인
-        if 'Title:' not in msg: continue
-            
+        if 'Title:' not in msg:
+            continue
+
         try:
             dt = datetime.strptime(dt_str[:19], "%Y-%m-%d %H:%M:%S")
-            
-            # 익일 오전 1시 마감 기준 처리 (오전 1시 이전 커밋은 전날 기록으로 인정)
-            # 매일 업데이트를 위해 shift_days 로직 제거
+
+            # 익일 오전 1시 마감 기준 처리
             target_dt = dt - timedelta(hours=1)
-            
-            month_key = target_dt.strftime("%Y-%m") 
-            date_str = target_dt.strftime("%m-%d")  
-            
+
+            month_key = target_dt.strftime("%Y-%m")
+            date_str = target_dt.strftime("%m-%d")
+
+            category = get_category(commit_hash)
+
             if month_key not in monthly_data:
                 monthly_data[month_key] = {}
             if date_str not in monthly_data[month_key]:
-                monthly_data[month_key][date_str] = {x: 0 for x in users}
-            monthly_data[month_key][date_str][u] += 1
+                monthly_data[month_key][date_str] = {x: {'SQL': 0, '알고리즘': 0} for x in users}
+
+            monthly_data[month_key][date_str][u][category] += 1
         except Exception:
             pass
 
 for month_key, data in monthly_data.items():
     target_file = f"{month_key}.md"
-    
+
     table_content = "\n\n| 날짜 | 요일 | SooyeonJ | Chobochoi | dori-2i |\n|:---:|:---:|:---:|:---:|:---:|\n"
-    # 날짜별로 내림차순 정렬하여 테이블 생성
     for k in sorted(data.keys(), reverse=True):
         dt_obj = datetime.strptime(f"{month_key[:4]}-{k}", "%Y-%m-%d")
         weekday_kr = ["월", "화", "수", "목", "금", "토", "일"][dt_obj.weekday()]
         row = f"| {k} | {weekday_kr} |"
         for u in users:
-            row += f" O ({data[k][u]}) |" if data[k][u] > 0 else " X |"
+            sql_cnt = data[k][u]['SQL']
+            alg_cnt = data[k][u]['알고리즘']
+            total = sql_cnt + alg_cnt
+            if total == 0:
+                row += " X |"
+            else:
+                parts = []
+                if alg_cnt > 0:
+                    parts.append(f"알고리즘({alg_cnt})")
+                if sql_cnt > 0:
+                    parts.append(f"SQL({sql_cnt})")
+                row += f" O ({', '.join(parts)}) |"
         table_content += row + "\n"
     table_content += "\n"
 
