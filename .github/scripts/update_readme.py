@@ -9,7 +9,7 @@ env = os.environ.copy()
 env['TZ'] = 'Asia/Seoul'
 
 def get_category(commit_hash):
-    """커밋된 README.md의 문제 링크 URL로 SQL/알고리즘 구분"""
+    """커밋된 파일 확장자로 SQL/알고리즘 구분 (.sql → SQL, .py → 알고리즘)"""
     try:
         files = subprocess.check_output(
             ['git', 'diff-tree', '--no-commit-id', '-r', '--name-only', commit_hash],
@@ -17,19 +17,8 @@ def get_category(commit_hash):
         ).decode('utf-8').strip().split('\n')
 
         for f in files:
-            if 'README.md' not in f:
-                continue
-            content = subprocess.check_output(
-                ['git', 'show', f'{commit_hash}:{f}'],
-                stderr=subprocess.DEVNULL, env=env
-            ).decode('utf-8')
-
-            for line in content.split('\n'):
-                if 'programmers.co.kr' in line:
-                    if '/sql/' in line:
-                        return 'SQL'
-                    else:
-                        return '알고리즘'
+            if f.endswith('.sql'):
+                return 'SQL'
     except Exception:
         pass
     return '알고리즘'
