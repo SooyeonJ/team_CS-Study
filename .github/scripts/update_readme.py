@@ -9,19 +9,29 @@ env = os.environ.copy()
 env['TZ'] = 'Asia/Seoul'
 
 def get_category(commit_hash):
-    """커밋된 파일 확장자로 SQL/알고리즘 구분 (.sql → SQL, .py → 알고리즘)"""
+    """커밋된 파일 확장자로 SQL/알고리즘을 명확히 구분"""
     try:
         files = subprocess.check_output(
             ['git', 'diff-tree', '--no-commit-id', '-r', '--name-only', commit_hash],
             stderr=subprocess.DEVNULL, env=env
         ).decode('utf-8').strip().split('\n')
 
+        # 필요한 알고리즘 확장자 추가 가능 (예: .py, .java, .cpp)
+        algo_extensions = ('.py', '.java', '.cpp', '.js')
+
         for f in files:
-            if f.endswith('.sql'):
+            f_lower = f.lower()
+            if f_lower.endswith('.sql'):
                 return 'SQL'
+            elif f_lower.endswith(algo_extensions):
+                return '알고리즘'
+                
+    except subprocess.CalledProcessError:
+        pass
     except Exception:
         pass
-    return '알고리즘'
+        
+    return None # 대상 파일이 없거나 에러 발생 시 None 반환
 
 for u in users:
     remote_branch = f"origin/{u}"
@@ -60,12 +70,14 @@ for u in users:
 
             category = get_category(commit_hash)
 
-            if month_key not in monthly_data:
-                monthly_data[month_key] = {}
-            if date_str not in monthly_data[month_key]:
-                monthly_data[month_key][date_str] = {x: {'SQL': 0, '알고리즘': 0} for x in users}
+            # category가 유효할 때만 데이터 추가
+            if category: 
+                if month_key not in monthly_data:
+                    monthly_data[month_key] = {}
+                if date_str not in monthly_data[month_key]:
+                    monthly_data[month_key][date_str] = {x: {'SQL': 0, '알고리즘': 0} for x in users}
 
-            monthly_data[month_key][date_str][u][category] += 1
+                monthly_data[month_key][date_str][u][category] += 1
         except Exception:
             pass
 
