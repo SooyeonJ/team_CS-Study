@@ -123,3 +123,19 @@ for month_key, data in monthly_data.items():
         with open(target_file, 'w', encoding='utf-8') as f:
             f.write(template_content)
         print(f"새로운 마크다운 파일이 생성되었습니다: {target_file}")
+
+# 파이썬 스크립트 내 해당 부분에 print 추가하여 테스트
+    for log in logs:
+        if '|' not in log:
+            continue
+        parts = log.split('|', 2)
+        if len(parts) < 3:
+            continue
+        commit_hash, dt_str, msg = parts
+
+        # 로그 확인용 (GitHub Actions 로그 탭에서 확인 가능)
+        print(f"[{u}] 커밋 확인됨: {dt_str} / 메시지: {msg}")
+
+        if 'Title:' not in msg:
+            print(f" => 탈락: 'Title:' 문자열 없음")
+            continue
