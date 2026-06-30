@@ -16,8 +16,7 @@ def get_category(commit_hash):
             stderr=subprocess.DEVNULL, env=env
         ).decode('utf-8').strip().split('\n')
 
-        # 필요한 알고리즘 확장자 추가 가능 (예: .py, .java, .cpp)
-        algo_extensions = ('.py', '.java', '.cpp', '.js')
+        algo_extensions = ('.py', '.java', '.cpp', '.js', '.c', '.cs')
 
         for f in files:
             f_lower = f.lower()
@@ -31,7 +30,7 @@ def get_category(commit_hash):
     except Exception:
         pass
         
-    return None # 대상 파일이 없거나 에러 발생 시 None 반환
+    return None
 
 for u in users:
     remote_branch = f"origin/{u}"
@@ -55,14 +54,11 @@ for u in users:
             continue
         commit_hash, dt_str, msg = parts
 
-        # 백준허브 식별자 확인
         if 'Title:' not in msg:
             continue
 
         try:
             dt = datetime.strptime(dt_str[:19], "%Y-%m-%d %H:%M:%S")
-
-            # 익일 오전 1시 마감 기준 처리
             target_dt = dt - timedelta(hours=1)
 
             month_key = target_dt.strftime("%Y-%m")
@@ -70,7 +66,6 @@ for u in users:
 
             category = get_category(commit_hash)
 
-            # category가 유효할 때만 데이터 추가
             if category: 
                 if month_key not in monthly_data:
                     monthly_data[month_key] = {}
@@ -83,7 +78,7 @@ for u in users:
 
 for month_key, data in monthly_data.items():
     target_file = f"{month_key}.md"
-
+    
     table_content = "\n\n| 날짜 | 요일 | SooyeonJ | Chobochoi | dori-2i |\n|:---:|:---:|:---:|:---:|:---:|\n"
     for k in sorted(data.keys(), reverse=True):
         dt_obj = datetime.strptime(f"{month_key[:4]}-{k}", "%Y-%m-%d")
@@ -105,15 +100,26 @@ for month_key, data in monthly_data.items():
         table_content += row + "\n"
     table_content += "\n"
 
+    s_mark = "## 코딩테스트 진행 과정"
+    e_mark = "## 💰 벌금 예외 사항"
+
     if os.path.exists(target_file):
         with open(target_file, 'r', encoding='utf-8') as f:
             content = f.read()
-
-        s_mark = "## 코딩테스트 진행 과정"
-        e_mark = "## 💰 벌금 예외 사항"
 
         if s_mark in content and e_mark in content:
             before = content.split(s_mark)[0]
             after = content.split(e_mark)[-1]
             with open(target_file, 'w', encoding='utf-8') as f:
                 f.write(before + s_mark + table_content + e_mark + after)
+    else:
+        # 파일이 없을 경우 실행되는 기본 템플릿 생성 로직
+        year_str, month_str = month_key.split('-')
+        template_content = f"""# {year_str}년 {month_str}월 코딩테스트 현황
+
+{s_mark}{table_content}{e_mark}
+- 벌금 면제자 및 사유를 이곳에 기록하세요.
+"""
+        with open(target_file, 'w', encoding='utf-8') as f:
+            f.write(template_content)
+        print(f"새로운 마크다운 파일이 생성되었습니다: {target_file}")
