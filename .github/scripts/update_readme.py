@@ -101,22 +101,37 @@ for month_key, data in monthly_data.items():
         table_content += row + "\n"
     table_content += "\n"
 
+   # 기존 마커 설정 부분
     s_mark = "## 코딩테스트 진행 과정"
     e_mark = "## 💰 벌금 예외 사항"
 
     if os.path.exists(target_file):
+        print(f"\n--- [{target_file}] 갱신 시도 ---")
         with open(target_file, 'r', encoding='utf-8') as f:
             content = f.read()
 
-        if s_mark in content and e_mark in content:
+        # 마커 존재 여부 상세 확인
+        has_s = s_mark in content
+        has_e = e_mark in content
+        
+        if has_s and has_e:
             before = content.split(s_mark)[0]
             after = content.split(e_mark)[-1]
             with open(target_file, 'w', encoding='utf-8') as f:
                 f.write(before + s_mark + table_content + e_mark + after)
+            print(f"✅ [{target_file}] 표 업데이트 및 저장 완료!")
+        else:
+            print(f"❌ 업데이트 실패: 파일 내 기준 문자열이 정확히 일치하지 않습니다.")
+            print(f" - '{s_mark}' 존재 여부: {has_s}")
+            print(f" - '{e_mark}' 존재 여부: {has_e}")
+            print("💡 해결: 마크다운 파일의 제목 띄어쓰기와 이모티콘을 위 문자열과 똑같이 맞춰주세요.")
     else:
-        # 파일이 없을 경우 실행되는 기본 템플릿 생성 로직
+        # 템플릿 생성 로직 (이전과 동일)
         year_str, month_str = month_key.split('-')
-        template_content = f"""# {year_str}년 {month_str}월 코딩테스트 현황
+        template_content = f"# {year_str}년 {month_str}월 코딩테스트 현황\n\n{s_mark}{table_content}{e_mark}\n- 벌금 면제자 및 사유를 이곳에 기록하세요.\n"
+        with open(target_file, 'w', encoding='utf-8') as f:
+            f.write(template_content)
+        print(f"✅ [{target_file}] 새로운 파일 및 템플릿 생성 완료!")
 
 {s_mark}{table_content}{e_mark}
 - 벌금 면제자 및 사유를 이곳에 기록하세요.
