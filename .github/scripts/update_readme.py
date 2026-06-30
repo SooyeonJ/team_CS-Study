@@ -32,8 +32,11 @@ def get_category(commit_hash):
         
     return None
 
+# 기존 코드의 for u in users: 내부 루프를 아래와 같이 수정하여 테스트
+
 for u in users:
     remote_branch = f"origin/{u}"
+    print(f"\n--- [{u}] 사용자 브랜치({remote_branch}) 확인 시작 ---")
     try:
         logs_out = subprocess.check_output(
             ['git', 'log', '--format=%H|%ad|%s', '--date=format-local:%Y-%m-%d %H:%M:%S', remote_branch],
@@ -41,9 +44,12 @@ for u in users:
         ).decode('utf-8').strip()
 
         if not logs_out:
+            print(f"[{u}] 커밋 내역이 비어있습니다.")
             continue
         logs = logs_out.split('\n')
-    except Exception:
+        print(f"[{u}] 총 {len(logs)}개의 커밋 발견")
+    except Exception as e:
+        print(f"[{u}] ❌ 브랜치 접근 실패: 해당 이름의 브랜치가 없거나 git log 에러 발생")
         continue
 
     for log in logs:
@@ -55,26 +61,15 @@ for u in users:
         commit_hash, dt_str, msg = parts
 
         if 'Title:' not in msg:
+            print(f"  -> 제외됨 (사유: 'Title:' 없음) | 메시지: {msg[:20]}...")
             continue
 
-        try:
-            dt = datetime.strptime(dt_str[:19], "%Y-%m-%d %H:%M:%S")
-            target_dt = dt - timedelta(hours=1)
-
-            month_key = target_dt.strftime("%Y-%m")
-            date_str = target_dt.strftime("%m-%d")
-
-            category = get_category(commit_hash)
-
-            if category: 
-                if month_key not in monthly_data:
-                    monthly_data[month_key] = {}
-                if date_str not in monthly_data[month_key]:
-                    monthly_data[month_key][date_str] = {x: {'SQL': 0, '알고리즘': 0} for x in users}
-
-                monthly_data[month_key][date_str][u][category] += 1
-        except Exception:
-            pass
+        category = get_category(commit_hash)
+        if not category:
+            print(f"  -> 제외됨 (사유: 확장자 불일치 또는 분석 실패) | 커밋: {commit_hash[:7]}")
+            continue
+            
+        print(f"  -> ✅ 유효 데이터 추가: {dt_str} | {category}")
 
 for month_key, data in monthly_data.items():
     target_file = f"{month_key}.md"
