@@ -11,24 +11,30 @@ env['TZ'] = 'Asia/Seoul'
 def get_category(commit_hash):
     """커밋된 파일 확장자로 SQL/알고리즘을 명확히 구분"""
     try:
-        files = subprocess.check_output(
-            ['git', 'diff-tree', '--no-commit-id', '-r', '--name-only', commit_hash],
-            stderr=subprocess.DEVNULL, env=env
-        ).decode('utf-8').strip().split('\n')
+        # -c core.quotepath=false 옵션을 추가하여 한글 파일명이 따옴표로 묶이는 것을 방지
+        out = subprocess.check_output(
+            ['git', '-c', 'core.quotepath=false', 'diff-tree', '--no-commit-id', '-r', '--name-only', commit_hash],
+            stderr=subprocess.PIPE, env=env
+        )
+        
+        # errors='ignore'를 추가하여 디코딩 에러로 스크립트가 터지는 것을 방지
+        files = out.decode('utf-8', errors='ignore').strip().split('\n')
 
         algo_extensions = ('.py', '.java', '.cpp', '.js', '.c', '.cs')
 
         for f in files:
-            f_lower = f.lower()
+            # 양끝 공백 및 혹시 모를 쌍따옴표 제거 후 소문자 변환
+            f_lower = f.strip().strip('"').lower() 
+            
             if f_lower.endswith('.sql'):
                 return 'SQL'
             elif f_lower.endswith(algo_extensions):
                 return '알고리즘'
                 
-    except subprocess.CalledProcessError:
-        pass
-    except Exception:
-        pass
+    except subprocess.CalledProcessError as e:
+        print(f"  [에러] Git 명령어 실패: {e.stderr.decode('utf-8', errors='ignore')}")
+    except Exception as e:
+        print(f"  [에러] 파이썬 처리 실패: {e}")
         
     return None
 
