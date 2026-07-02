@@ -8,21 +8,20 @@
 | ---- | ----: | ---------- | ------------------------------- |
 | PCCE |  Lv.4 | PCCE 최고 등급 | Lv.0~Lv.1 기출 전부 정확히 풀이          |
 | PCCP |  Lv.3 | 중상급 코딩 역량  | Lv.1 안정화 + Lv.2 집중 + Lv.3 일부 접근 |
-
 ---
 
 ## 📘 PCCE 기출문제
  
 | 레벨 | 번호 | 문제명 | 정답률 | 체크 |
 | :---: | :---: | :--- | :---: | :---: |
-| Lv.0 | 1번 | [출력](https://school.programmers.co.kr/learn/courses/30/lessons/250133) | 74% | - [ ] |
-| Lv.0 | 1번 | [문자 출력](https://school.programmers.co.kr/learn/courses/30/lessons/340207) | 73% | - [ ] |
-| Lv.0 | 2번 | [피타고라스의 정리](https://school.programmers.co.kr/learn/courses/30/lessons/250132) | 82% | - [ ] |
-| Lv.0 | 2번 | [각도 합치기](https://school.programmers.co.kr/learn/courses/30/lessons/340206) | 77% | - [ ] |
-| Lv.0 | 3번 | [나이 계산](https://school.programmers.co.kr/learn/courses/30/lessons/250131) | 81% | - [ ] |
-| Lv.0 | 3번 | [수 나누기](https://school.programmers.co.kr/learn/courses/30/lessons/340205) | 73% | - [ ] |
-| Lv.0 | 4번 | [저축](https://school.programmers.co.kr/learn/courses/30/lessons/250130) | 83% | - [ ] |
-| Lv.0 | 4번 | [병과분류](https://school.programmers.co.kr/learn/courses/30/lessons/340204) | 81% | - [ ] |
+| Lv.0 | 1번 | [출력](https://school.programmers.co.kr/learn/courses/30/lessons/250133) | 74% | ✅ |
+| Lv.0 | 1번 | [문자 출력](https://school.programmers.co.kr/learn/courses/30/lessons/340207) | 73% | ✅ |
+| Lv.0 | 2번 | [피타고라스의 정리](https://school.programmers.co.kr/learn/courses/30/lessons/250132) | 82% | ✅ |
+| Lv.0 | 2번 | [각도 합치기](https://school.programmers.co.kr/learn/courses/30/lessons/340206) | 77% | ✅ |
+| Lv.0 | 3번 | [나이 계산](https://school.programmers.co.kr/learn/courses/30/lessons/250131) | 81% | ✅ |
+| Lv.0 | 3번 | [수 나누기](https://school.programmers.co.kr/learn/courses/30/lessons/340205) | 73% | ✅ |
+| Lv.0 | 4번 | [저축](https://school.programmers.co.kr/learn/courses/30/lessons/250130) | 83% | ✅ |
+| Lv.0 | 4번 | [병과분류](https://school.programmers.co.kr/learn/courses/30/lessons/340204) | 81% | ✅ |
 | Lv.0 | 5번 | [산책](https://school.programmers.co.kr/learn/courses/30/lessons/250129) | 84% | - [ ] |
 | Lv.0 | 5번 | [심폐소생술](https://school.programmers.co.kr/learn/courses/30/lessons/340203) | 77% | - [ ] |
 | Lv.0 | 6번 | [가채점](https://school.programmers.co.kr/learn/courses/30/lessons/250128) | 76% | - [ ] |
