@@ -22,7 +22,7 @@
 | Lv.0 | 3번 | [수 나누기](https://school.programmers.co.kr/learn/courses/30/lessons/340205) | 73% | ✅ |
 | Lv.0 | 4번 | [저축](https://school.programmers.co.kr/learn/courses/30/lessons/250130) | 83% | ✅ |
 | Lv.0 | 4번 | [병과분류](https://school.programmers.co.kr/learn/courses/30/lessons/340204) | 81% | ✅ |
-| Lv.0 | 5번 | [산책](https://school.programmers.co.kr/learn/courses/30/lessons/250129) | 84% | - [ ] |
+| Lv.0 | 5번 | [산책](https://school.programmers.co.kr/learn/courses/30/lessons/250129) | 84% | ✅ |
 | Lv.0 | 5번 | [심폐소생술](https://school.programmers.co.kr/learn/courses/30/lessons/340203) | 77% | - [ ] |
 | Lv.0 | 6번 | [가채점](https://school.programmers.co.kr/learn/courses/30/lessons/250128) | 76% | - [ ] |
 | Lv.0 | 6번 | [물 부족](https://school.programmers.co.kr/learn/courses/30/lessons/340202) | 66% | - [ ] |
