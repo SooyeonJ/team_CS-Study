@@ -12,8 +12,8 @@
 
 ## 📘 PCCE 기출문제
  
-| 레벨 | 번호 | 문제명 | 정답률 | 체크 |
-| :---: | :---: | :--- | :---: | :---: |
+| 레벨 | 번호 | 문제명 | 정답률 | 체크 | 비고
+| :---: | :---: | :--- | :---: | :---: | :---: |
 | Lv.0 | 1번 | [출력](https://school.programmers.co.kr/learn/courses/30/lessons/250133) | 74% | ✅ |
 | Lv.0 | 1번 | [문자 출력](https://school.programmers.co.kr/learn/courses/30/lessons/340207) | 73% | ✅ |
 | Lv.0 | 2번 | [피타고라스의 정리](https://school.programmers.co.kr/learn/courses/30/lessons/250132) | 82% | ✅ |
@@ -26,13 +26,13 @@
 | Lv.0 | 5번 | [심폐소생술](https://school.programmers.co.kr/learn/courses/30/lessons/340203) | 77% | ✅✅ |
 | Lv.0 | 6번 | [가채점](https://school.programmers.co.kr/learn/courses/30/lessons/250128) | 76% | ✅✅ |
 | Lv.0 | 6번 | [물 부족](https://school.programmers.co.kr/learn/courses/30/lessons/340202) | 66% | ✅ |
-| Lv.0 | 7번 | [가습기](https://school.programmers.co.kr/learn/courses/30/lessons/250127) | 80% | - [ ] |
+| Lv.0 | 7번 | [가습기](https://school.programmers.co.kr/learn/courses/30/lessons/250127) | 80% | ✅ |
 | Lv.0 | 7번 | [버스](https://school.programmers.co.kr/learn/courses/30/lessons/340201) | 63% | - [ ] |
 | Lv.0 | 8번 | [닉네임 규칙](https://school.programmers.co.kr/learn/courses/30/lessons/340200) | 77% | - [ ] |
 | Lv.0 | 8번 | [창고 정리](https://school.programmers.co.kr/learn/courses/30/lessons/250126) | 67% | - [ ] |
 | Lv.1 | 9번 | [지폐 접기](https://school.programmers.co.kr/learn/courses/30/lessons/340199) | 66% | - [ ] |
 | Lv.1 | 9번 | [이웃한 칸](https://school.programmers.co.kr/learn/courses/30/lessons/250125) | 62% | - [ ] |
-| Lv.1 | 10번 | [데이터 분석](https://school.programmers.co.kr/learn/courses/30/lessons/250121) | 56% | - [ ] |
+| Lv.1 | 10번 | [데이터 분석](https://school.programmers.co.kr/learn/courses/30/lessons/250121) | 56% | ❌ | 파라미터를 동적으로 받아야 함 
 | Lv.1 | 10번 | [공원](https://school.programmers.co.kr/learn/courses/30/lessons/340198) | 47% | - [ ] |
  
 ## 📙 PCCP 기출문제
