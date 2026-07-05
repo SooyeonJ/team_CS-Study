@@ -25,7 +25,7 @@
 | Lv.0 | 5번 | [산책](https://school.programmers.co.kr/learn/courses/30/lessons/250129) | 84% | ✅ |
 | Lv.0 | 5번 | [심폐소생술](https://school.programmers.co.kr/learn/courses/30/lessons/340203) | 77% | ✅✅ |
 | Lv.0 | 6번 | [가채점](https://school.programmers.co.kr/learn/courses/30/lessons/250128) | 76% | ✅✅ |
-| Lv.0 | 6번 | [물 부족](https://school.programmers.co.kr/learn/courses/30/lessons/340202) | 66% | - [ ] |
+| Lv.0 | 6번 | [물 부족](https://school.programmers.co.kr/learn/courses/30/lessons/340202) | 66% | ✅ |
 | Lv.0 | 7번 | [가습기](https://school.programmers.co.kr/learn/courses/30/lessons/250127) | 80% | - [ ] |
 | Lv.0 | 7번 | [버스](https://school.programmers.co.kr/learn/courses/30/lessons/340201) | 63% | - [ ] |
 | Lv.0 | 8번 | [닉네임 규칙](https://school.programmers.co.kr/learn/courses/30/lessons/340200) | 77% | - [ ] |
