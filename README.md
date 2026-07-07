@@ -11,7 +11,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 
 | 순서 | 문제명 | 핵심 문법 | 체크 |
 |------|--------|------|------|
-| 1 | [문자열 내 마음대로 정렬하기 (Lv1)](https://school.programmers.co.kr/learn/courses/30/lessons/12915) | `sorted(key=lambda x: (x[n], x))` — 다중 기준 | [x] |
+| 1 | [문자열 내 마음대로 정렬하기 (Lv1)](https://school.programmers.co.kr/learn/courses/30/lessons/12915) | `sorted(key=lambda x: (x[n], x))` — 다중 기준 | ✅ |
 | 2 | [실패율 (Lv1)](https://school.programmers.co.kr/learn/courses/30/lessons/42889) | `sorted(key=lambda x: -x[1])` | [ ] |
 | 3 | [가장 큰 수 (Lv2)](https://school.programmers.co.kr/learn/courses/30/lessons/42746) | `sorted(key=lambda x: x*3, reverse=True)` | [x] |
 | 4 | [저울 (Lv2)](https://school.programmers.co.kr/learn/courses/30/lessons/154051) | `sorted(key=lambda x: -x)` | [ ] |
