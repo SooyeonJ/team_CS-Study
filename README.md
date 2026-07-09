@@ -43,7 +43,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | 순서 | 문제명                                                                                  | 핵심 문법                       | 체크  |
 | -- | ------------------------------------------------------------------------------------- | --------------------------- | --- |
 | 1  | [폰켓몬 (Lv1)](https://school.programmers.co.kr/learn/courses/30/lessons/1845)               | `set()` + `len()` + `min()` | [ ] |
-| 2  | [없는 숫자 더하기 (Lv1)](https://school.programmers.co.kr/learn/courses/30/lessons/86051)        | `set()` 차집합 + `sum()`       | [ ] |
+| 2  | [없는 숫자 더하기 (Lv1)](https://school.programmers.co.kr/learn/courses/30/lessons/86051)        | `set()` 차집합 + `sum()`       | ✅ |
 | 3  | [로또의 최고 순위와 최저 순위 (Lv1)](https://school.programmers.co.kr/learn/courses/30/lessons/77484) | `set()` + `count()`         | [x] |
 
 ---
