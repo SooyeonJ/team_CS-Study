@@ -60,9 +60,9 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 
 | 순서 | 문제명                                                                                | 핵심 문법                         | 체크  |
 | -- | -------------------------------------------------------------------------------------- | ----------------------------- | --- |
-| 1  | [배열 두 배 만들기 (Lv0)](https://school.programmers.co.kr/learn/courses/30/lessons/120809)    | 리스트 컴프리헨션                     | [ ] |
-| 2  | [문자열 반복해서 출력하기 (Lv0)](https://school.programmers.co.kr/learn/courses/30/lessons/181950) | `*` 연산자                       | [ ] |
-| 3  | [머쓱이보다 키 큰 사람 (Lv0)](https://school.programmers.co.kr/learn/courses/30/lessons/120585)  | 컴프리헨션 + 조건                    | [ ] |
+| 1  | [배열 두 배 만들기 (Lv0)](https://school.programmers.co.kr/learn/courses/30/lessons/120809)    | 리스트 컴프리헨션                     | ✅ |
+| 2  | [문자열 반복해서 출력하기 (Lv0)](https://school.programmers.co.kr/learn/courses/30/lessons/181950) | `*` 연산자                       | ✅ |
+| 3  | [머쓱이보다 키 큰 사람 (Lv0)](https://school.programmers.co.kr/learn/courses/30/lessons/120585)  | 컴프리헨션 + 조건                    | ✅ |
 | 4  | [짝수는 싫어요 (Lv0)](https://school.programmers.co.kr/learn/courses/30/lessons/120813)       | 컴프리헨션 + `range()`             | [ ] |
 | 5  | [자릿수 더하기 (Lv0)](https://school.programmers.co.kr/learn/courses/30/lessons/120906)       | `sum(int(x) for x in str(n))` | [ ] |
 | 6  | [옹알이 (1) (Lv0)](https://school.programmers.co.kr/learn/courses/30/lessons/120956)       | `any()` + 문자열                 | [ ] |
