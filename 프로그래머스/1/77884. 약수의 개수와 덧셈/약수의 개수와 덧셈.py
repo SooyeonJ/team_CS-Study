@@ -1,19 +1,26 @@
 def anw(a):
-    answer=[]
-    for i in range(1,a+1):
-        if a%i==0:
-            answer.append(i)
-    return len(answer)
-    
-def solution(left, right):
-    
+    count=0
     result=[]
-    for i in range(left,right+1):
-        if(anw(i)%2==0):
-            result.append(i)
-        elif(anw(i)%2!=0):
-            result.append(-i)
-  
-    return sum(result)
+    for x in range(1,a+1):
+        if x*x==a:
+            count+=1
+        else:
+            if a%x==0:
+                count+=1
+    return count
+        
+
+def solution(left,right):
+    sol=[]
+    for result in range(left,right+1):
+        if anw(result)%2==0:
+            sol.append(result)
+        else: sol.append(-result)
+    
+    return sum(sol)
+        
+    
+
+        
             
             
