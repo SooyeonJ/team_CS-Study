@@ -1,20 +1,19 @@
 def solution(answers):
-    unmath1 = [1,2,3,4,5]*2000
-    unmath2 = [2, 1, 2, 3, 2, 4, 2, 5]*1250
-    unmath3 = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]*1000
+    giveUp1=[1,2,3,4,5]*len(answers)
+    giveUp2=[2, 1, 2, 3, 2, 4, 2, 5]*len(answers)
+    giveUp3=[3, 3, 1, 1, 2, 2, 4, 4, 5, 5]*len(answers)
     
-    count = [0,0,0]
-    for i,x in enumerate(answers):
-        if unmath1[i]==x:
+    count=[0,0,0]
+    for x1,x2,x3,y in zip(giveUp1,giveUp2,giveUp3,answers):
+        if x1==y:
             count[0]+=1
-        if unmath2[i]==x:
+        if x2==y:
             count[1]+=1
-        if unmath3[i]==x:
+        if x3==y:
             count[2]+=1
-        
-    max_value = max(count)
     
-    return [i+1 for i,x in enumerate(count) if x==max_value]
-            
+    return [i+1 for i,result in enumerate(count) if result==max(count)]
         
-    
+        
+        
+        
