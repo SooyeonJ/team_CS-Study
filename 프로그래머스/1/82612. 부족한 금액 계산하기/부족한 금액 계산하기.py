@@ -1,11 +1,10 @@
 def solution(price, money, count):
     
-    for i in range(1,count+1):
-        money = money-price*i
+    total=0
+    for x in range(1,count+1):
+        total+=price*x
         
-    if(money<0):
-        money= -money
-    elif(money>=0):
+    if total-money>0:
+        return total-money
+    elif total-money<=0:
         return 0
-        
-    return money
