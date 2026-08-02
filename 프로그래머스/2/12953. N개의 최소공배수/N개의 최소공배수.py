@@ -1,3 +1,16 @@
+from math import gcd
+
+def solution(arr):
+    answer=arr[0]
+    for num in arr[1:]:
+        answer=answer*num//gcd(answer,num)
+    return answer
+
+
+
+
+
+'''
 '유클리드 호제법으로 최소공배수 계산'
 def gcd(a,b):
     while b!=0:
@@ -11,7 +24,7 @@ def solution(arr):
         
     
     return answer
-                
+'''                
 
                    
             
