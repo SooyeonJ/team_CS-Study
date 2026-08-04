@@ -1,5 +1,16 @@
+import numpy as np
+
 def solution(arr1, arr2):
     
+    x = np.array(arr1)
+    y = np.array(arr2)
+    answer = x@y
+    
+    return answer.tolist()
+    
+    
+    '''
+    *******정석 풀이*******
     'append문이 아니라 +=문을 쓰려면 미리 초기화가 필요'
     answer = [[0]*len(arr2[0]) for _ in range(len(arr1))]
     
@@ -14,7 +25,7 @@ def solution(arr1, arr2):
                 
     
     return answer
-            
+    '''        
 
             
     
