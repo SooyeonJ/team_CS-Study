@@ -1,6 +1,15 @@
 def solution(arr):
     # [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
     
+    answer=[]
+    for x in arr:
+        if len(answer) == 0 or answer[-1]!=x:
+            answer.append(x)
+            
+    return answer
+    
+    
+    '''
     sol=[]
     for i,j in zip(arr,arr[1:]):
         if i!=j:
@@ -12,7 +21,7 @@ def solution(arr):
         sol.append(arr[-1])
         
     return sol
-            
+   '''          
     
 
     
