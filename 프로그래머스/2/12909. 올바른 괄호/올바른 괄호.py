@@ -1,4 +1,4 @@
-#260325
+#260810
 def solution(s):
     st = []
     
@@ -12,7 +12,3 @@ def solution(s):
                 return False
             
     return len(st) == 0
-            
-        
-        
-        
