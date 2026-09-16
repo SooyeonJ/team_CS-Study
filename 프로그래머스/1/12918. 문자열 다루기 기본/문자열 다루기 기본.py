@@ -1,9 +1,9 @@
 def solution(s):
     
-    if len(s)==4 or len(s)==6:
-        result = True if s.isdigit() else False
-        return result
-    
+    if len(s) in (4,6):
+        return True if s.isdigit() else False
     return False
+    
+    
 
         
