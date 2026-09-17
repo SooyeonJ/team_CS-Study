@@ -1,5 +1,28 @@
 def solution(clothes):
+    hash={}
+    for v,k in clothes:
+        hash[k]=hash.get(k,0)+1
     
+    total=1
+    for i in hash.values():
+        total*=(i+1)
+        
+    
+    return total-1
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    '''
     hash={}
     result=1
     
@@ -10,6 +33,7 @@ def solution(clothes):
         result*=value+1
         
     return result-1
+    '''
     
     '''
     조합론(경우의 수)로 생각한다.
@@ -23,6 +47,5 @@ def solution(clothes):
     '''
     
    
-        
        
     
