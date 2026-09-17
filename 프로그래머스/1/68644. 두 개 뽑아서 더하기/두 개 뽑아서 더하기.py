@@ -1,12 +1,7 @@
 def solution(numbers):
     result=[]
-    for i in range(len(numbers)):
-        j=i+1
-        while(j<len(numbers)):
-            result.append(numbers[i]+numbers[j])
-            j+=1
+    for i,x in enumerate(numbers):
+        for y in numbers[i+1:len(numbers)]:
+            result.append(x+y)
             
-
     return sorted(set(result))
-        
-   
