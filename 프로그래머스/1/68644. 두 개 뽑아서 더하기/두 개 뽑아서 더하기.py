@@ -1,7 +1,8 @@
 def solution(numbers):
-    result=[]
-    for i,x in enumerate(numbers):
-        for y in numbers[i+1:len(numbers)]:
-            result.append(x+y)
-            
-    return sorted(set(result))
+        result=[]
+        for i in range(len(numbers)):
+            for j in range(i+1,len(numbers)):
+                result.append(numbers[i]+numbers[j])
+                
+                
+        return sorted(set(result))
