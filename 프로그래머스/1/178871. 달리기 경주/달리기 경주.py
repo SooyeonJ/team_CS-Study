@@ -13,9 +13,7 @@ def solution(players, callings):
         'player_index 수 증/감 필요, 이름이 여러번 불리기 때문에 index 숫자 변화 필요'
         player_index[call]=call_player-1
         player_index[front_player]=call_player
-        
-        
-        
+                        
     return players
         
         
